@@ -1,0 +1,1 @@
+const fakeData =  {id: 7, post: "I know a fair amount of procedural PHP and I decided I might at least learn the basics of object oriented php as well, if nothing else just to compare and see what it's like."}
