@@ -9,11 +9,10 @@ const {
     SERVER_PORT
 } = process.env;
 
-
-
-
 const app = express();
 app.use(bodyParser.json());
+
+app.get('api/test', ctrl.get)
 
 
 
