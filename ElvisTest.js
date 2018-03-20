@@ -6,3 +6,4 @@ class Elvis(elvisObj){
 }
 
 let paul = new Elvis( );
+let seventeen = 10 + 7;
