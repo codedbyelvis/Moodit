@@ -12,7 +12,6 @@ class App extends Component {
       userId: '7tzazd',
       sampleData: fakeData
     }
-    
   }
 
 testEndpoint(){
