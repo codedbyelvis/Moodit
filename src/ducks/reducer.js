@@ -1,3 +1,4 @@
+import axios from 'axios'
 const initialState = {
     user: '',
     text: '',
@@ -27,6 +28,7 @@ export default function reducer(state = initialState, action) {
 
 export function getUser( user ){
     console.log(user)
+    const user2 = axios.post('/api/user', {user})
     return{
         type: GET_USER,
         payload: user
