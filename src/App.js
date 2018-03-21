@@ -3,20 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 
-const fakeData =  {id: 7, post: "I know a fair amount of procedural PHP and I decided I might at least learn the basics of object oriented php as well, if nothing else just to compare and see what it's like."}
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       userId: '7tzazd',
-      sampleData: fakeData
+      sampleData: {id: 7, post: "I know a fair amount of procedural PHP and I decided I might at least learn the basics of object oriented php as well, if nothing else just to compare and see what it's like."}
     }
   }
 
 testEndpoint(){
   console.log(this.state.fakeData)
-  axios.post('/api/test', this.state.fakeData)
+  axios.get('/api/test')
+  .then( res => {
+    console.log(res)
+  })
 }
 
   render() {
