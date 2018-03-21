@@ -1,41 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios'
-
-
+import React, { Component } from "react";
+import { Navbar, NavbarBrand, NavItem, NavLink, Collapse } from "mdbreact";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Map from "./components/Map/Map";
+import Profile from "./components/Profile/Profile";
+import Login from "./components/Login/Login";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: '7tzazd',
-      sampleData: {id: 7, post: "I know a fair amount of procedural PHP and I decided I might at least learn the basics of object oriented php as well, if nothing else just to compare and see what it's like."}
-    }
-    
+      collapse: true
+    };
   }
-
-testEndpoint(){
-  console.log(this.state.fakeData)
-  axios.get('/api/test')
-  .then( res => {
-    console.log(res)
-  })
-}
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={()=>this.testEndpoint()} >
-          Test Endpoint
-          </button>
+      <div>
+        <BrowserRouter>
+          <div>
+            <Navbar color="unique-color-dark" dark>
+              <NavbarBrand href="#">
+                <img
+                  src="https://mdbootstrap.com/img/logo/mdb-transparent.png"
+                  height="30"
+                />
+              </NavbarBrand>
+              <Collapse isOpen={this.state.collapse} navbar>
+                <NavItem active>
+                  <NavLink className="nav-link" to="/">
+                    Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/Profile">
+                    Profile
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/Map">
+                    Map
+                  </NavLink>
+                </NavItem>
+              </Collapse>
+            </Navbar>
+            <Switch>
+              <Route component={Home} exact path="/" />
+              <Route component={Login} path="/Login" />
+              <Route component={Profile} path="/Profile" />
+              <Route component={Map} path="/Map" />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
