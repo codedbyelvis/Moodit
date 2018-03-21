@@ -12,7 +12,7 @@ const {
 const app = express();
 app.use(bodyParser.json());
 
-app.get('api/test', ctrl.get)
+app.get('/api/test', ctrl.get)
 
 
 
