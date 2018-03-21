@@ -4,7 +4,7 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login'
 import Map from './components/Map/Map'
-import Navbar from './components/Navbar/Navbar'
+// import Navbar from './components/Navbar/navBar'
 import Profile from './components/Profile/Profile'
 
 export default (
@@ -13,7 +13,7 @@ export default (
             <Route component={Home} exact path="/" />
             <Route component={Login} path="/Login" />
             <Route component={Profile} path="/Profile" />
-            <Route component={Navbar} path="/Navbar" />
+            {/* <Route component={Navbar} path="/Navbar" /> */}
             <Route component={Map} path="/Map" />
         </Switch>
     </HashRouter>
