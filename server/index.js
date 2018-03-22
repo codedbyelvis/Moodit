@@ -34,14 +34,18 @@ const r = new snoowrap({
 
 //-----------watson/reddit--------------
 
-app.post('/api/user', (req, res) => {
+app.post('/api/user', (req, res, next) => {
     console.log(req.body.user);
     r.getUser(req.body.user).getComments().then(cmt => { // any reddit user can be passed into getUser
         var userStr = ''
         for(let i = 0; i < cmt.length; i++){
             userStr += cmt[i].body + ' '
         } 
+        const redditInfo = cmt;
+        // console.log('this is the info', redditInfo);
         console.log(userStr);
+     
+        
         //watson api below
         if(userStr.length > 0){
             // console.log(myResponse);
@@ -83,11 +87,18 @@ app.post('/api/user', (req, res) => {
                             
                             // Output Watson's tone analysis to the console.
                             console.log("The tone analysis for \'" + text + "\' is:\n");
-                            console.log(tone);
+                            console.log(tone)
+
+                            const redditWatson = {
+                                    reddit: redditInfo,
+                                    watson: tone
                             }
-                    });
+                            res.status(200).send(redditWatson)
+                            }
+                    }   
+                );
             } else {
-                    console.log(myResponse);
+                //     console.log(userStr);
             }})
     })
 
