@@ -98,11 +98,7 @@ app.post('/api/user', (req, res, next) => {
                     }   
                 );
             } else {
-<<<<<<< HEAD
                 //     console.log(userStr);
-=======
-                    // console.log(myResponse);
->>>>>>> master
             }})
             // .catch(console.log('asdfasdf'))
             // res.status(500).send('helloworld')
