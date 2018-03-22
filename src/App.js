@@ -14,6 +14,10 @@ class App extends Component {
     };
   }
 
+  test() {
+    console.log('success')
+  }
+
   render() {
     return (
       <div>
@@ -33,12 +37,12 @@ class App extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/Profile">
+                  <NavLink className="nav-link-profile" to="/Profile">
                     Profile
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/Map">
+                  <NavLink className="nav-link-map" to="/Map">
                     Map
                   </NavLink>
                 </NavItem>
@@ -46,9 +50,9 @@ class App extends Component {
             </Navbar>
             <Switch>
               <Route component={Home} exact path="/" />
-              <Route component={Login} path="/Login" />
-              <Route component={Profile} path="/Profile" />
-              <Route component={Map} path="/Map" />
+              <Route component={Login} path="/login" />
+              <Route component={Profile} path="/profile" />
+              <Route component={Map} path="/map" />
             </Switch>
           </div>
         </BrowserRouter>
