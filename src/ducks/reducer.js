@@ -28,9 +28,9 @@ export default function reducer(state = initialState, action) {
 
 export function getUser( user ){
     console.log(user)
-     axios.post('/api/user', {user}).catch(err => {
-         console.log(err)
-     })
+     axios.post('/api/user', {user}).then(
+         resp => {console.log(resp) }
+     )
     return{
         type: GET_USER,
         payload: user
