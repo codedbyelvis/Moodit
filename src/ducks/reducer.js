@@ -28,7 +28,7 @@ export default function reducer(state = initialState, action) {
 
 export function getUser( user ){
     console.log(user)
-    const user2 = axios.post('/api/user', {user})
+     axios.post('/api/user', {user})
     return{
         type: GET_USER,
         payload: user
@@ -36,6 +36,7 @@ export function getUser( user ){
 }
 
 export function getText( text ){
+    console.log(text);
     return{
         type: GET_TEXT,
         payload: text
