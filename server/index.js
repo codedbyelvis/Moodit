@@ -47,7 +47,7 @@ app.post('/api/user', (req, res, next) => {
      
         
         //watson api below
-        if(userStr.length > 0){
+        if(userStr.length > 0){ 
             // console.log(myResponse);
             
             // The text that we want to analyze the tone of.
@@ -98,8 +98,14 @@ app.post('/api/user', (req, res, next) => {
                     }   
                 );
             } else {
+<<<<<<< HEAD
                 //     console.log(userStr);
+=======
+                    // console.log(myResponse);
+>>>>>>> master
             }})
+            // .catch(console.log('asdfasdf'))
+            // res.status(500).send('helloworld')
     })
 
 
