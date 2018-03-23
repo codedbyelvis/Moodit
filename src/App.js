@@ -37,12 +37,12 @@ class App extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link-profile" to="/Profile">
+                  <NavLink className="nav-link-profile" to="/profile">
                     Profile
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link-map" to="/Map">
+                  <NavLink className="nav-link-map" to="/map">
                     Map
                   </NavLink>
                 </NavItem>
