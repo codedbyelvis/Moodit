@@ -27,7 +27,7 @@ class Login extends Component {
                 <div className='myinput'>
                     <form>
                         <p className="h5 text-center mb-4">Mood Analyzer</p>
-                        <Input label="Type Username" icon="user" group type="email" validate error="wrong" success="right" className="inputModal2_Title"
+                        <Input label="Type Username" icon="user" validate error="wrong" success="right" className="inputModal2_Title"
                             placeholder="username"
                             onChange={(e) => this.setState({ newUser: e.target.value })} />
 
