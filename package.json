@@ -28,8 +28,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "jtest": "jest --watchAll"
   },
   "main": "server/index.js",
-  "proxy": "http://localhost:3005"
+  "proxy": "http://localhost:3005",
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
 }
