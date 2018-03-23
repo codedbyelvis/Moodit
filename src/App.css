@@ -26,3 +26,28 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.myinput {
+  width: 300px;
+  margin: 0 auto;
+  
+}
+
+/* .btn-default {
+  background-color: rgb(122, 215, 243) !important;
+} */
+
+.md-form .form-control {
+  width: 400px;
+  margin: 0 auto;
+}
+/* .btn-default {
+  background-color: #33b5e5 !important;
+  color: #ffffff !important;
+} */
+
+.fa-user:before {
+  content: "\F007";
+  color: #9c9c9c;
+}
