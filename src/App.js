@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import Map from "./components/Map/Map";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
+// import SvgReddit from "./components/SVG/SvgReddit";
 
 class App extends Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class App extends Component {
               <Route component={Login} path="/Login" />
               <Route component={Profile} path="/Profile" />
               <Route component={Map} path="/Map" />
+              {/* <Route component={SvgReddit} path="/SvgReddit" /> */}
             </Switch>
           </div>
         </BrowserRouter>

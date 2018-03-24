@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import MyCarousel from "../Carousel/MyCarousel";
+import SvgReddit from "../SVG/SvgReddit";
 // import MyNavbar from '../Navbar/navBar'
 
 class Home extends Component {
@@ -27,7 +28,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <MyCarousel />
+        {/* <MyCarousel /> */}
+
+        <h1>Below is my svg</h1>
+        <SvgReddit />
+        
+        
       </div>
     );
   }
