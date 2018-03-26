@@ -1,8 +1,12 @@
 import axios from 'axios'
 const initialState = {
-    user: 'Bob',
+    user: '',
     redditData: [],
-    watsonData: []
+    watsonData: [],
+    time: '',
+    picture: '',
+    watsonNum: '',
+    watsonToneName: ''
 }
 
 const GET_USERINFO = 'GET_USERINFO';
@@ -19,7 +23,7 @@ export default function reducer(state = initialState, action) {
         //     return Object.assign({}, state, {loading: true});
 
         case GET_USERINFO_FULFILLED:
-            return Object.assign({}, state, {user: action.payload.data.reddit[0].author, redditData: action.payload.data.reddit, watsonData: action.payload.data.watson } );
+            return Object.assign({}, state, {user: action.payload.data.reddit[0].author, redditData: action.payload.data.reddit, watsonData: action.payload.data.watson, time: action.payload.data.reddit[0].created_utc, picture: action.payload.data.iconPic, watsonNum: action.payload.data.watsonNum, watsonToneName: action.payload.data.toneId } );
 
         // case GET_TEXT:
         //     return Object.assign({}, state, { text: action.payload });
