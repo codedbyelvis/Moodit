@@ -44,62 +44,82 @@ app.post('/api/user', (req, res, next) => {
         const redditInfo = cmt;
         // console.log('this is the info', redditInfo);
         console.log(userStr);
-     
-        
-        //watson api below
-        if(userStr.length > 0){ 
-            // console.log(myResponse);
-            
-            // The text that we want to analyze the tone of.
-            var text = userStr;
-            
-            // Turn our text into valid json.
-            var input = { "text": text };
-            
-            // The format that the tone analyzer needs. 
-            var params = 
-                    {
-                    'tone_input': input,
-                    'content_type': 'application/json'
-                    };
-            
-            // Initialize the Tone Analyzer by giving it our credentials.
-            var tone_analyzer = new ToneAnalyzerV3(
-                    {
-                    username: WATSON_USERNAME,
-                    password: PASSWORD,
-                    version_date: '2017-09-21'
-                    });
-            
-            // Use our Tone Analyzer variable to analyze the tone.
-            tone_analyzer.tone(params, function(error, response) 
-                    {
-                    // There's an error.
-                    if (error)
-                            {
-                            console.log('Error:', error);
-                            }
-                    // No error, we got our tone result.
-                    else
-                            {
-                            // The tone of the text, as determined by watson.
-                            var tone = JSON.stringify(response, null, 2)
-                            
-                            // Output Watson's tone analysis to the console.
-                            console.log("The tone analysis for \'" + text + "\' is:\n");
-                            console.log(tone)
+        r.getUser(req.body.user).fetch().then(userInfos => {
+                var picture = userInfos.icon_img
+                console.log(picture)
+                
+                
+                //watson api below
+                if(userStr.length > 0){ 
+                        // console.log(myResponse);
+                        
+                        // The text that we want to analyze the tone of.
+                        var text = userStr;
+                        
+                        // Turn our text into valid json.
+                        var input = { "text": text };
+                        
+                        // The format that the tone analyzer needs. 
+                        var params = 
+                        {
+                                'tone_input': input,
+                                'content_type': 'application/json'
+                        };
+                        
+                        // Initialize the Tone Analyzer by giving it our credentials.
+                        var tone_analyzer = new ToneAnalyzerV3(
+                                {
+                                        username: WATSON_USERNAME,
+                                        password: PASSWORD,
+                                        version_date: '2017-09-21'
+                                });
+                                
+                                // Use our Tone Analyzer variable to analyze the tone.
+                                tone_analyzer.tone(params, function(error, response) 
+                                {
+                                        // There's an error.
+                                        if (error)
+                                        {
+                                                console.log('Error:', error);
+                                        }
+                                        // No error, we got our tone result.
+                                        else
+                                        {
+                                                // The tone of the text, as determined by watson.
+                                                var tone = JSON.stringify(response, null, 2)
+                                                var learning = JSON.parse(tone);
+                                                var toneNum = ''  
+                                                for(let i = 0; i < learning.document_tone.tones.length; i++){
+                                                        toneNum +=(learning.document_tone.tones[i].score * 100).toFixed(2) + '  '
+                                                        
+                                                }
+                                                toneName = ''
+                                                for(let i = 0; i < learning.document_tone.tones.length; i++){
+                                                        toneName += learning.document_tone.tones[i].tone_name + '  '
 
-                            const redditWatson = {
-                                    reddit: redditInfo,
-                                    watson: tone
-                            }
-                            res.status(200).send(redditWatson)
-                            }
-                    }   
-                );
-            } else {
-                //     console.log(userStr);
-            }})
+                                                }
+                                                // learning.document_tone.tones[0].score
+                                                console.log(toneNum)
+                                                // console.log( 'tone',learning.document_tone.tones);
+                                                // Output Watson's tone analysis to the console.
+                                                console.log("The tone analysis for \'" + text + "\' is:\n");
+                                                console.log(tone)
+                                                
+                                                const redditWatson = {
+                                                        reddit: redditInfo,
+                                                        watson: tone,
+                                                        watsonNum: toneNum,
+                                                        iconPic: picture,
+                                                        toneId: toneName
+                                                }
+                                                res.status(200).send(redditWatson)
+                                        }
+                                }   
+                        );
+                } else {
+                        //     console.log(userStr);
+                }})
+        }) 
             // .catch(console.log('asdfasdf'))
             // res.status(500).send('helloworld')
     })

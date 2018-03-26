@@ -12,6 +12,7 @@ class Login extends Component {
         }
     }
 
+
     render() {
         return (
             <div>
@@ -32,7 +33,9 @@ class Login extends Component {
                             onChange={(e) => this.setState({ newUser: e.target.value })} />
 
                         <div className="text-center">
-                            <Button color='primary' onClick={() => this.props.getUser(this.state.newUser)}>Search</Button>
+                            <Link to = '/profile'>
+                                <Button color='primary' onClick={() => this.props.getUser(this.state.newUser)}>Search</Button>
+                            </Link>
                         </div>
                     </form>
                 </div>
