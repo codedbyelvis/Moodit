@@ -23,7 +23,15 @@ export default function reducer(state = initialState, action) {
         //     return Object.assign({}, state, {loading: true});
 
         case GET_USERINFO_FULFILLED:
-            return Object.assign({}, state, {user: action.payload.data.reddit[0].author, redditData: action.payload.data.reddit, watsonData: action.payload.data.watson, time: action.payload.data.reddit[0].created_utc, picture: action.payload.data.iconPic, watsonNum: action.payload.data.watsonNum, watsonToneName: action.payload.data.toneId } );
+            return Object.assign({}, state, {
+                user: action.payload.data.reddit[0].author,
+                redditData: action.payload.data.reddit,
+                watsonData: action.payload.data.watson,
+                time: action.payload.data.reddit[0].created_utc,
+                picture: action.payload.data.iconPic,
+                watsonNum: action.payload.data.watsonNum,
+                watsonToneName: action.payload.data.toneId
+            });
 
         // case GET_TEXT:
         //     return Object.assign({}, state, { text: action.payload });
@@ -31,21 +39,21 @@ export default function reducer(state = initialState, action) {
         // case GET_MOOD:
         //     return Object.assign({}, state, { mood: action.payload });
 
-        default: 
-        return state;
+        default:
+            return state;
     }
 }
 
-export function getUser( user ){
+export function getUser(user) {
     console.log(user)
-    const info = axios.post('/api/user', {user}).then(
-         resp => {
-             console.log(resp)
-             return resp;
-            }
-        )
-        console.log(info);
-    return{
+    const info = axios.post('/api/user', { user }).then(
+        resp => {
+            console.log(resp)
+            return resp;
+        }
+    )
+    console.log(info);
+    return {
         type: GET_USERINFO,
         payload: info
     }
