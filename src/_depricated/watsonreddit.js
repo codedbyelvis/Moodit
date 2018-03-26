@@ -1,4 +1,4 @@
-app.get('/api/comments', (req, res) => {
+// app.get('/api/comments', (req, res) => {
     //     console.log(req.body.user);
     //     r.getUser(req.body.user).getComments().then(cmt => { // any reddit user can be passed into getUser
     //         var userStr = ''
