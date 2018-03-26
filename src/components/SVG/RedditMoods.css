@@ -1,0 +1,17 @@
+.reddit_purple {
+  fill: #6c6b86;
+}
+
+.reddit_orange {
+  fill: #e26e00;
+}
+.antenna_circle {
+  fill: none;
+  stroke: #6c6b86;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+
+.displayNone{
+  display: none;
+}
