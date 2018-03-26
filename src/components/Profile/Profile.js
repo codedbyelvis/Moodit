@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getUser } from '../../ducks/reducer';
 import { connect } from 'react-redux'
 
+
 class Profile extends Component {
   constructor(props){
     super(props)
@@ -14,14 +15,21 @@ class Profile extends Component {
   
 
   render() {
-  
+    console.log(this.props.watsonToneName.trim().split("  "))
+  let stringNum = this.props.watsonNum.trim().split("  ")
+  let numbs = stringNum.map((num)=>{
+    return parseInt(num, 10)
+    
+  })
+  console.log(numbs)
     return (
       <div>
         <h1>Profile Page</h1>
         <div>{this.props.user}</div>
         <div>this is the time: {this.props.time}</div>
         <div>{this.props.watsonNum}</div>
-        <div>{this.props.watsonToneName}</div>
+        <div>Label: {this.props.watsonToneName}</div>
+      
         <img src={this.props.picture} alt=""/>
       </div>
     );
