@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import MyCarousel from "../Carousel/MyCarousel";
 import SvgReddit from "../SVG/SvgReddit";
 import RedditMoods from "../SVG/RedditMoods";
+import MoodditText from "../SVG/MoodditText";
 // import MyNavbar from '../Navbar/navBar'
 
 class Home extends Component {
@@ -33,7 +34,8 @@ class Home extends Component {
 
         <h1>Below is my svg</h1>
         <RedditMoods />
-        {/* <SvgReddit/> */}
+        <MoodditText />
+        
         
         
       </div>

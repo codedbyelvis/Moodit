@@ -6,6 +6,7 @@ class Profile extends Component {
     return (
       <div>
         <h1>Profile Page</h1>
+        <canvas id="barChart"></canvas>
       </div>
     );
   }

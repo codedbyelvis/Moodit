@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import Map from "./components/Map/Map";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
+import MoodditText from "./components/SVG/MoodditText";
 // import SvgReddit from "./components/SVG/SvgReddit";
 
 class App extends Component {
@@ -22,10 +23,11 @@ class App extends Component {
           <div>
             <Navbar color="unique-color-dark" dark>
               <NavbarBrand href="#">
-                <img
+              <MoodditText />
+                {/* <img
                   src="https://mdbootstrap.com/img/logo/mdb-transparent.png"
                   height="30"
-                />
+                /> */}
               </NavbarBrand>
               <Collapse isOpen={this.state.collapse} navbar>
                 <NavItem active>
