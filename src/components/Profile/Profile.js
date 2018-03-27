@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { getUser } from '../../ducks/reducer';
 import { connect } from 'react-redux'
+// import Charts from '../Chart/Chart'
 
 
 class Profile extends Component {
@@ -29,7 +30,7 @@ class Profile extends Component {
         <div>this is the time: {this.props.time}</div>
         <div>{this.props.watsonNum}</div>
         <div>Label: {this.props.watsonToneName}</div>
-      
+        {/* <Charts /> */}
         <img src={this.props.picture} alt=""/>
       </div>
     );
