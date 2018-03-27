@@ -1,0 +1,29 @@
+
+  #fill{
+    visibility:hidden;
+  }
+   .reddit_orange {
+          fill: #f30;
+        }
+  .org_out{
+    stroke: #f30;
+    
+  }
+  .out_wh{
+    stroke: #ffffff
+  }
+  
+  .reddit_white {
+    fill: #ffffff;
+    
+  }
+  
+  #outline{
+    fill: none;
+          stroke-miterlimit: 10;
+          stroke-width: 7px;
+  }
+#mooddit_logo{
+    /* background-color: blueviolet; */
+    height: 80px;
+}
