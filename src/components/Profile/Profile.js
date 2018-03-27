@@ -41,7 +41,7 @@ class Profile extends Component {
 
         <div className="row">
           <div className="col red">
-            <PLine />
+            <PLine data={this.state.reddit} />
           </div>
         </div>
       
