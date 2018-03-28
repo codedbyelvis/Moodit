@@ -138,14 +138,21 @@ app.get('/api/comments', (req, res, next) => {
                                 newArray.push(r.getSubmission(subId).comments)
                                
                         }
+                        //gathering all the comments for each post and placing them in the Array in the correct order
                         Promise.all(newArray).then(responses=>{
                                 redditHot.forEach((post, i)=>{
                                         post.redditComments = responses[i].map(c=> c.body)
                                        
                                 })
+                                //Array ready and full with all the data that we need in this position 
+                                
+                                for (let x=0; x<redditHot.length; x++){
+                                        console.log(redditHot[x].redditComments.length)
+                                }
+                                
                                 res.status(200).send(redditHot)
                         })
-                       
+
                 })
                 
                 
