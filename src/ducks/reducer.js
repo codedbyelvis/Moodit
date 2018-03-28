@@ -7,13 +7,15 @@ const initialState = {
     picture: '',
     watsonNum: '',
     watsonToneName: ''
+    // text: []
 }
 
 const GET_USERINFO = 'GET_USERINFO';
-const GET_USERINFO_PENDING = 'GET_USERINFO_PENDING'
+// const GET_USERINFO_PENDING = 'GET_USERINFO_PENDING'
 const GET_USERINFO_FULFILLED = 'GET_USERINFO_FULFILLED'
 
 // const GET_TEXT = 'GET_TEXT';
+// const GET_TEXT_FULFILLED = 'GET_TEXT_FULFILLED';
 // const GET_MOOD = 'GET_MOOD';
 
 export default function reducer(state = initialState, action) {
@@ -33,7 +35,7 @@ export default function reducer(state = initialState, action) {
                 watsonToneName: action.payload.data.toneId
             });
 
-        // case GET_TEXT:
+        // case GET_TEXT_FULFILLED:
         //     return Object.assign({}, state, { text: action.payload });
 
         // case GET_MOOD:
@@ -48,7 +50,7 @@ export function getUser(user) {
     console.log(user)
     const info = axios.post('/api/user', { user }).then(
         resp => {
-            console.log(resp)
+            // console.log(resp)
             return resp;
         }
     )
@@ -59,11 +61,18 @@ export function getUser(user) {
     }
 }
 
-// export function getText( text ){
-//     console.log(text);
-//     return{
+// export function getText() {
+
+//     const mapInfo = axios.get('/api/comments').then(
+//         resp => {
+
+//             return resp
+//         }
+//     )
+//     console.log(mapInfo)
+//     return {
 //         type: GET_TEXT,
-//         payload: text
+//         payload: mapInfo
 //     }
 // }
 

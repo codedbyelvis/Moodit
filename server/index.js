@@ -6,9 +6,6 @@ const express = require('express'),
         ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3'),
         waitUnti = require('wait-until');
 
-
-
-
 const {
         SERVER_PORT,
         CLIENT_ID,
@@ -23,7 +20,7 @@ const {
 const app = express();
 app.use(bodyParser.json());
 
-// reddit api
+// reddit api credentials
 const r = new snoowrap({
         userAgent: USER_AGENT,
         clientId: CLIENT_ID,
@@ -31,50 +28,41 @@ const r = new snoowrap({
         refreshToken: REFRESH_TOKEN
 });
 
-
+// watson api credentials
+const tone_analyzer = new ToneAnalyzerV3(
+        {
+                username: WATSON_USERNAME,
+                password: PASSWORD,
+                version_date: '2017-09-21'
+        });
 
 //-----------watson/reddit--------------
 
 app.post('/api/user', (req, res, next) => {
-        console.log(req.body.user);
         r.getUser(req.body.user).getComments().then(cmt => { // any reddit user can be passed into getUser
                 var userStr = ''
                 for (let i = 0; i < cmt.length; i++) {
                         userStr += cmt[i].body + ' '
                 }
                 const redditInfo = cmt;
-                // console.log('this is the info', redditInfo);
-                console.log(userStr);
 
                 ///get picture from reddit
                 r.getUser(req.body.user).fetch().then(userInfos => {
                         var picture = userInfos.icon_img
-                        console.log(picture)
 
                         //watson api below
                         if (userStr.length > 0) {
-                                // console.log(myResponse);
-
                                 // The text that we want to analyze the tone of.
                                 var text = userStr;
-
                                 // Turn our text into valid json.
                                 var input = { "text": text };
-
                                 // The format that the tone analyzer needs. 
                                 var params =
                                         {
                                                 'tone_input': input,
                                                 'content_type': 'application/json'
                                         };
-
-                                // Initialize the Tone Analyzer by giving it our credentials.
-                                var tone_analyzer = new ToneAnalyzerV3(
-                                        {
-                                                username: WATSON_USERNAME,
-                                                password: PASSWORD,
-                                                version_date: '2017-09-21'
-                                        });
+                                
 
                                 // Use our Tone Analyzer variable to analyze the tone.
                                 tone_analyzer.tone(params, function (error, response) {
