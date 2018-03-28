@@ -3,7 +3,8 @@ const express = require('express'),
         bodyParser = require('body-parser'),
         ctrl = require('./controllers/controllers'),
         snoowrap = require('snoowrap'),
-        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
+        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3'),
+        waitUnti = require('wait-until');
 
 
 
@@ -115,111 +116,51 @@ app.post('/api/user', (req, res, next) => {
                                 }
                                 );
                         } else {
-                                //     console.log(userStr);
                         }
                 })
         })
-        // .catch(console.log('asdfasdf'))
-        // res.status(500).send('helloworld')
 })
 
 app.get('/api/comments', (req, res, next) => {
         ////get comments from top 25 subreddits
         let itetator = 0
-        let redditHot = []
-        
-
         var subName = ''
         var postTitle = ''
         var link = ''
-        
-       
+        var redditHot = []
+        var newArray = []
         r.getHot()
                 .then(resp => {
-                        // console.log(resp)
                         for (let j = 0; j < 25; j++) {
-                          subName = resp[j].subreddit.display_name
-                          postTitle = resp[j].title
-                          link = resp[j].permalink
-                          
+                                subName = resp[j].subreddit.display_name
+                                postTitle = resp[j].title
+                                link = resp[j].permalink
                                 // console.log(subId)
                                 var subId = resp[j].id
                                 // console.log(resp[0])
                                 // console.log(resp[j].title, subId)
-                                var postInfo ={
+                                var postInfo = {
                                         subName: subName,
                                         postTitle: postTitle,
                                         link: link,
-                                        redditComments: []
+                                        redditComments: [],
+                                        subId: subId
                                 }
-                                r.getSubmission(subId).comments.then(resp=>{
-                                        for (let i = 0; i < 1; i++) {
-                                                if(resp[i]!== undefined){
-                                                        itetator++
-                                                        var newComment = resp[i].body
-                                                        // console.log(newComment)
-                                                        // console.log(resp[i].body + '---------------')
-                                                        // redditComments.push(resp[i].body)
-                                                        postInfo.redditComments.push(newComment)
-                                                        
-                                                }
-                                                
-                                                // console.log([i], resp[i].body)
-                                                // if(!resp[i].body){console.log('nothing to show')}
-                                                // redditComments.push(resp[i].body + '-----')
-                                                // redditComments.push([i] + '-----')
-                                                
-                                                // console.log(resp[i].body.length + ' -------- ')                                           
-                                                
-                                                // if(redditComments.length === 625) {
-                                                        //         res.status(200).send(redditComments)
-                                                        
-                                                        // }
-                                                        
-                                                }
-                                                console.log(postInfo)
-                                                // console.log(itetator)
-                                                
-                                        
-                                        // newComments.push(redditComments)
-                                        // redditComments = []
-                                        // console.log(redditComments)
-                                        // console.log(newComments.length)
-                                     
-                                        // if (newComments.length === 25) {
-                                        //         res.status(200).send(newComments)
-                                        // }
-                                        
-                                       })
-
-                                // r.getSubreddit(subName).getNewComments().then(resp => {
-                                //         var comments = []
-                                //         for (let i = 0; i < 25; i++) {
-                                //                 comments.push(resp[i].body + '-----')
-                                //                 // comments.push([i] + '-----')
-
-                                //                 // console.log(resp[i].body.length + ' -------- ')                                           
-
-                                //                 // if(comments.length === 625) {
-                                //                 //         res.status(200).send(comments)
-
-                                //                 // }
-
-                                //         }
-                                //         newComments.push(comments)
-                                //         comments = []
-                                //         // console.log(comments)
-                                //         // console.log(newComments.length)
-                                     
-                                //         if (newComments.length === 25) {
-                                //                 res.status(200).send(newComments)
-                                //         }
-                                // })
-
+                                redditHot.push(postInfo)
+                                newArray.push(r.getSubmission(subId).comments)
+                               
                         }
-                     
-                }
-                )
+                        Promise.all(newArray).then(responses=>{
+                                redditHot.forEach((post, i)=>{
+                                        post.redditComments = responses[i].map(c=> c.body)
+                                       
+                                })
+                                res.status(200).send(redditHot)
+                        })
+                       
+                })
+                
+                
 })
 
 
