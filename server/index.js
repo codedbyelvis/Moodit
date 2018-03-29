@@ -62,7 +62,7 @@ app.post('/api/user', (req, res, next) => {
                                                 'tone_input': input,
                                                 'content_type': 'application/json'
                                         };
-                                
+
 
                                 // Use our Tone Analyzer variable to analyze the tone.
                                 tone_analyzer.tone(params, function (error, response) {
@@ -109,6 +109,16 @@ app.post('/api/user', (req, res, next) => {
         })
 })
 
+const promiseToneAnalyzer = params => {
+        return new Promise((resolve, reject) => tone_analyzer.tone(params, (error, response) => {
+                if (error) {
+                        reject(error)
+                } else {
+                        resolve(response)
+                }
+        }))
+}
+
 app.get('/api/comments', (req, res, next) => {
         ////get comments from top 25 subreddits
         let itetator = 0
@@ -117,6 +127,7 @@ app.get('/api/comments', (req, res, next) => {
         var link = ''
         var redditHot = []
         var newArray = []
+        var commentStack = []
         r.getHot()
                 .then(resp => {
                         for (let j = 0; j < 25; j++) {
@@ -132,38 +143,51 @@ app.get('/api/comments', (req, res, next) => {
                                         postTitle: postTitle,
                                         link: link,
                                         redditComments: [],
-                                        subId: subId
+                                        subId: subId,
+                                        watsonInfo: []
                                 }
                                 redditHot.push(postInfo)
                                 newArray.push(r.getSubmission(subId).comments)
-                               
+
                         }
                         //gathering all the comments for each post and placing them in the Array in the correct order
-                        Promise.all(newArray).then(responses=>{
-                                redditHot.forEach((post, i)=>{
-                                        post.redditComments = responses[i].map(c=> c.body)
-                                       
+                        Promise.all(newArray).then(responses => {
+                                redditHot.forEach((post, i) => {
+                                        post.redditComments = responses[i].map(c => c.body)
+                                        var commentsStr = ''
+
+                                        redditHot[i].redditComments.forEach((sentence, i) => {
+                                                commentsStr += sentence + ' '
+
+                                        })
+
+
+                                        //Watson call to analyze the comments 
+                                        if (commentsStr.length > 0) {
+                                                var text = commentsStr
+                                                var input = { "text": text }
+
+                                                var params = {
+                                                        'tone_input': input,
+                                                        'content_type': 'application/json'
+                                                };
+
+                                                commentStack.push(promiseToneAnalyzer(params))
+                                        } else { }
+
                                 })
-                                //Array ready and full with all the data that we need in this position 
-                                
-                                for (let x=0; x<redditHot.length; x++){
-                                        console.log(redditHot[x].redditComments.length)
-                                }
-                                
-                                res.status(200).send(redditHot)
+                                Promise.all(commentStack).then(watsonResponses => {
+                                        redditHot.forEach((post, i) => {
+                                                redditHot[i].watsonInfo = watsonResponses[i]
+                                        })
+
+                                }).then(() => {
+
+                                        res.status(200).send(redditHot)
+                                })
                         })
-
                 })
-                
-                
 })
-
-
-
-
-
-
-
 
 app.get('/api/test', ctrl.get)
 
