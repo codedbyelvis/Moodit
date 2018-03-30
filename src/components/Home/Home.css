@@ -1,0 +1,36 @@
+
+.home_profile_login{
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr;
+    grid-gap: 20px;
+
+}
+.home_profile_login{
+    margin-top: 30px;
+}
+.home_profile_login img{
+    height: 300px;
+}
+.home_login h1{
+    font-weight: 600;
+    color:#297fca;
+}
+video{
+    position: absolute;
+    top: 50;
+    left: 0;
+    right:0;
+    width: 100%;
+    z-index: 1;
+}
+.home_hero{
+    width: 100vw;
+    min-height: 800px;
+}
+.home_hero img{
+    z-index: -5;
+    width: 100%;
+}
+.home_section3{
+    margin-top: 80px;
+}
