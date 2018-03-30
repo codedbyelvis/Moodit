@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from 'axios'
 // import {getText} from '../../ducks/reducer'
 // import {connect} from 'react-redux'
