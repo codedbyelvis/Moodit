@@ -31,12 +31,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-        {/* <MyCarousel /> */}
-        <PLine />
 
         <h1>Below is my svg</h1>
-        <RedditMoods />
-        <MoodditText />
+        
         
         
         
