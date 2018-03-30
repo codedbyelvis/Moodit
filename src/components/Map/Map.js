@@ -6,7 +6,8 @@ class Map extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      mapInformation: []
+      mapInformation: [],
+      loading: true 
     }
   }
 
@@ -14,12 +15,12 @@ class Map extends Component {
     axios.get('/api/comments').then(({data}) => {
       console.log(data)
       this.setState({
-        mapInformation: data
+        mapInformation: data, 
+        loading: false
       })
-
     })
-
   }
+
   render() {
     let random = this.state.mapInformation.map((info, i) => {
       return(
@@ -34,11 +35,24 @@ class Map extends Component {
     })
     return (
       <div>
-        <h1>Map Page</h1>
+        {!this.state.loading === true ?
+        <div>
+<h1>Map Page</h1>
         <button onClick={() => this.getInfo()}>Click Me</button>
-        
         {random}
-       
+        </div>
+        
+        :
+        <div>
+         
+          <div>Waiting for your data....</div>
+          <img
+            src="loading.svg"
+          />
+        </div>
+        } 
+        
+        
 
       </div>
     );

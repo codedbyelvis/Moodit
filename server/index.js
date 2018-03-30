@@ -3,9 +3,8 @@ const express = require('express'),
         bodyParser = require('body-parser'),
         ctrl = require('./controllers/controllers'),
         snoowrap = require('snoowrap'),
-        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3'),
-        waitUnti = require('wait-until');
-
+        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
+        
 const {
         SERVER_PORT,
         CLIENT_ID,
