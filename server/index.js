@@ -141,7 +141,7 @@ app.get('/api/comments', (req, res, next) => {
                                 var postInfo = {
                                         subName: subName,
                                         postTitle: postTitle,
-                                        link: link,
+                                        link: 'http://reddit.com'+link,
                                         redditComments: [],
                                         subId: subId,
                                         watsonInfo: []

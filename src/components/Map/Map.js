@@ -25,7 +25,8 @@ class Map extends Component {
       return(
        <div key={i}>
 
-         <div key={i} >{info.postTitle}</div>
+         <a href={info.link} target="_blank">{info.postTitle}</a>
+         
        </div>
         
       )
