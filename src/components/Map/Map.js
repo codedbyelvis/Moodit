@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import MyCard from '../Card/MyCard'
 import './Map.css'
+import MapCard from '../Card/MapCard'
 
 
 class Map extends Component {
@@ -14,95 +15,45 @@ class Map extends Component {
     };
   }
 
-  getInfo() {
+
+  componentDidMount() {
     axios.get("/api/comments").then(({ data }) => {
       console.log(data);
-      this.setState({
-        mapInformation: data,
-        loading: false
-      });
+  
     });
+    let mapData = [] ;
+
+    mapData.map( (item) => {
+      return (
+
+      <div class="map_card">
+        <div className="card_header">
+        <h2>Title of the Reddit Post</h2>
+        </div>
+    
+        <div class="card__details">
+        
+        <p class="subreddit_title">Subreddit Title</p>
+        <p class="post_comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
+        <p class="post_comment">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
+      </div>
+    </div>
+
+      );
+    })
+
+    
+
+
   }
 
   render() {
-    let random = this.state.mapInformation.map((info, i) => {
-      return (
-        <div key={i}>
-          <a href={info.link} target="_blank">
-            {info.postTitle}
-          </a>
-        </div>
-      );
-    });
+    
     return (
       <div>
-        <div className="albums" >
+        <div className="cardGrid" >
         
-        <div class="album">
-                <div className="card_header">
-                <h2>Title of the Reddit Post</h2>
-                </div>
-             
-                <div class="album__details">
-                  
-                  <p class="album__artist">Subreddit Title</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
-                </div>
-              </div>
-        
-              <div class="album">
-                <div className="card_header">
-                <h2>Title of the Reddit Post</h2>
-                </div>
-             
-                <div class="album__details">
-                  
-                  <p class="album__artist">Subreddit Title</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
-                </div>
-              </div>
-        
-              <div class="album">
-                <div className="card_header">
-                <h2>Title of the Reddit Post</h2>
-                </div>
-             
-                <div class="album__details">
-                  
-                  <p class="album__artist">Subreddit Title</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
-                </div>
-              </div>
-        
-              <div class="album">
-                <div className="card_header">
-                <h2>Title of the Reddit Post</h2>
-                </div>
-             
-                <div class="album__details">
-                  
-                  <p class="album__artist">Subreddit Title</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
-                </div>
-              </div>
-        
-              <div class="album">
-                <div className="card_header">
-                <h2>Title of the Reddit Post</h2>
-                </div>
-             
-                <div class="album__details">
-                  
-                  <p class="album__artist">Subreddit Title</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint doloremque repellat, iste debitis.</p>
-                  <p class="album__desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, excepturi!</p>
-                </div>
-              </div>
-
+        <MapCard />
 
           </div>
       </div>

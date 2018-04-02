@@ -1,8 +1,15 @@
+.home_wrapper{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* background: blue; */
+}
 
 .home_profile_login{
     display: grid;
     grid-template-columns: 1fr 2fr 3fr 1fr;
     grid-gap: 20px;
+    width: 100vw;
 
 }
 .home_profile_login{
