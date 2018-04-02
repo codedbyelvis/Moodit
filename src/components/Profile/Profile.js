@@ -19,7 +19,7 @@ class Profile extends Component {
 
     render() {
         if(this.props.watsonNum && this.props.watsonToneName){
-
+            
             var ctxB = document.getElementById("barChart").getContext('2d');
             var myBarChart = new Chart(ctxB, {
                 type: 'bar',

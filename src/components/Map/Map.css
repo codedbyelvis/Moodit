@@ -21,7 +21,7 @@
    
     
     align-items: center;
-    color: gray;
+    color: black;
     font-weight: 100;
     min-height: 400px;
     max-height: 500px;
@@ -40,3 +40,23 @@
   .album__details{
       padding: 20px;
   }
+  .comments{
+    height: 20px;
+    width: 20px;
+  }
+
+/* .shadow{
+  position:absolute;
+    max-width:45%;
+    max-height:45%;
+    top:50%;
+    left:50%;
+    overflow:visible;
+}
+  .loading{
+    position:relative;
+    max-width:100%;
+    max-height:100%;
+    margin-top:-50%;
+    margin-left:-50%;
+  } */
