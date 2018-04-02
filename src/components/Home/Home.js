@@ -34,58 +34,60 @@ class Home extends Component {
   render() {
     return (
       <div>
-
-        <div className="home_hero">
-          {/* <video src={video1} autoPlay="true" loop > </video> */}
-          <img src={img1} />
-        </div>
-
-        <div className="home_profile_login">
-        <div></div>
-
-
-          <img src={happy_reddit} />
-
-
-          <div className="home_login" >
-
-            <form>
-              <h1 >What's your moodit?</h1>
-              <h1 >Let Watson analyze you.</h1>
-
-              <Input
-                label="Type Username"
-                icon="user"
-                validate
-                error="wrong"
-                success="right"
-                className="inputModal2_Title"
-                placeholder="username"
-                onChange={e => this.setState({ newUser: e.target.value })}
-              />
+<div className="home_wrapper" >
   
-              <div className="text-center">
-                <Link to="/profile">
-                  <Button
-                    color="primary"
-                    onClick={() => this.props.getUser(this.state.newUser)}
-                    >
-                    Search
-                  </Button>
-                </Link>
-              </div>
-            </form>
+          <div className="home_hero">
+            {/* <video src={video1} autoPlay="true" loop > </video> */}
+            <img src={img1} />
           </div>
-
-
-                  <div></div>
+  
+          <div className="home_profile_login">
+          <div></div>
+  
+  
+            <img src={happy_reddit} />
+  
+  
+            <div className="home_login" >
+  
+              <form>
+                <h1 >What's your moodit?</h1>
+                <h1 >Let Watson analyze you.</h1>
+  
+                <Input
+                  label="Type Username"
+                  icon="user"
+                  validate
+                  error="wrong"
+                  success="right"
+                  className="inputModal2_Title"
+                  placeholder="username"
+                  onChange={e => this.setState({ newUser: e.target.value })}
+                />
+    
+                <div className="text-center">
+                  <Link to="/profile">
+                    <Button
+                      color="primary"
+                      onClick={() => this.props.getUser(this.state.newUser)}
+                      >
+                      Search
+                    </Button>
+                  </Link>
+                </div>
+              </form>
+            </div>
+  
+  
+                    <div></div>
+          </div>
+  
+        <div className="home_section3">
+        <img src={img3} />
+  
         </div>
 
-      <div className="home_section3">
-      <img src={img3} />
-
-      </div>
-
+</div> 
       </div>
     );
   }
