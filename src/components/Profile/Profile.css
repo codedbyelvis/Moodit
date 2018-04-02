@@ -1,0 +1,67 @@
+.bouncy {
+    animation: bouncy 4s 3 linear;
+    position: relative;
+}
+
+@keyframes bouncy {
+    0%{top:0em}
+    40%{top:0em}
+    43%{top:-0.9em}
+    46%{top:0em}
+    48%{top:-0.4em}
+    50%{top:0em}
+    100%{top:0em}
+}
+
+button.graphbtn{
+    display: inline-block;
+    padding:0.3em 1.2em;
+    margin: 0 0.1em 0.1em 0;
+    border:0.16em solid rgba(255, 255, 255);
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: skyblue;
+    text-shadow: 0 0.04em 0.04em rgba(231, 51, 51, 0.35);
+    text-align: center;
+    transition: all 0.2s;
+}
+
+
+button.graphbtn:hover {
+    border-color: rgba(255, 255, 255, 1);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+button.graphbtn:active {
+    background: #e6e6e6;
+    -webkit-box-shadow: inset 0px 0px 5px #ffffff;
+       -moz-box-shadow: inset 0px 0px 5px #ffffff;
+            box-shadow: inset 0px 0px 5px #ffffff;
+            color: rgb(0, 0, 0);
+  }
+
+button.graphbtn:focus {outline:0};
+
+.helloName {
+    font-family: 'Raleway', sans-serif;
+}
+
+.plainText {
+    font-family: 'Raleway', sans-serif;;
+}
+
+.profileColor {
+    background-color: skyblue;
+}
+
+.profileTone {
+    padding-bottom: 30px;
+    color: rgb(28, 28, 29);
+}
+
+
+
