@@ -30,7 +30,7 @@ class Map extends Component {
     })
   }
 
-
+ 
   render() {
     let random = this.state.mapInformation.map((info, i) => {
       // if(info.watsonInfo){
