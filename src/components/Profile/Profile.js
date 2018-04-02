@@ -9,17 +9,19 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: true
+            loading: true,
+            color: 'rgba(255,255,255,0)',
+            firstLoad: true
         }
     }
-
+    
     componentWillUnmount(){
         this.props.clearReducer()
     }
-
+    
     render() {
-        if(this.props.watsonNum && this.props.watsonToneName){
-
+        if(this.props.watsonNum && this.props.watsonToneName && this.state.firstLoad){
+            
             var ctxB = document.getElementById("barChart").getContext('2d');
             var myBarChart = new Chart(ctxB, {
                 type: 'bar',
@@ -57,19 +59,66 @@ class Profile extends Component {
                     }
                 }
             });
+            let colorPicker = (numbs, watsonTone) =>{
+                let color = '';
+                console.log(numbs);
+                for(let i =0; i < numbs.length; i++){
+                    var max = Math.max(...numbs);
+                    var sameIndex = numbs.indexOf(max);
+                }
+                
+                console.log(watsonTone[sameIndex]);
+                switch (watsonTone[sameIndex]) {
+                    case 'Anger':
+                    console.log('I am Angry.');
+                    color = `rgba(255, 0, 0, ${max})`;
+                    break;
+                    case 'Fear':
+                    console.log('I am Fearful.');
+                    color = `rgba(128, 0, 128, ${max})`;            
+                    break;
+                    case 'Joy':
+                    console.log('I am Joyful.');
+                    color = `rgba(255, 255, 0, ${max})`;
+                    break;
+                    case 'Sadness':
+                    console.log('I am Sad.');
+                    color = `rgba(0, 0, 255, ${max})`;
+                    break;
+                    case 'Analytical':
+                    console.log('I am Analytical.');
+                    color = `rgba(0, 255, 255, ${max})`;
+                    break;
+                    case 'Confident':
+                    console.log('I am Confident.');
+                    color = `rgba(0, 128, 0, ${max})`;
+                    break;
+                    case 'Tentative':
+                    console.log('I am Tentative.');
+                    color = `rgba(128, 128, 128, ${max})`;
+                    break;
+                    default:
+                    console.log('Sorry, we are out of emotions');
+                }
+                this.setState({
+                    color:color,
+                    firstLoad:false
+                })
+            }; colorPicker(this.props.watsonNum, this.props.watsonToneName);
+            var colorPicked = this.state.color;
         }
         
         return (
             
             <div>
-                    <div>
+                    <div style={{backgroundColor: this.state.color}}>
                          <div className="row">
           <div className="col-md-3 green">
             <img className = 'redditpic' src={this.props.picture} alt="" />
           </div>
           <div className="col-md-9 gre">
             <h1>Hello, {this.props.user}</h1>
-            <canvas id="barChart"></canvas>
+            <canvas id="barChart" style={{backgroundColor: 'white'}}></canvas>
             <h3>
               Watson has done a thorough analysis of your Reddit comments and
               discovered some interesting insights. Here's your Moodit profile
