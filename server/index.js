@@ -3,9 +3,8 @@ const express = require('express'),
         bodyParser = require('body-parser'),
         ctrl = require('./controllers/controllers'),
         snoowrap = require('snoowrap'),
-        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3'),
-        waitUnti = require('wait-until');
-
+        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
+        
 const {
         SERVER_PORT,
         CLIENT_ID,
@@ -75,22 +74,25 @@ app.post('/api/user', (req, res, next) => {
                                                 // The tone of the text, as determined by watson.
                                                 var tone = JSON.stringify(response, null, 2)
                                                 var learning = JSON.parse(tone);
-                                                var toneNum = ''
+                                                var toneNum = []
                                                 for (let i = 0; i < learning.document_tone.tones.length; i++) {
-                                                        toneNum += (learning.document_tone.tones[i].score * 100).toFixed(2) + '  '
+                                                        var redditNum = (learning.document_tone.tones[i].score * 100).toFixed(2)
+                                                        var realNum = parseInt(redditNum, 10)
+                                                        // console.log(typeof realNum)
+                                                        toneNum.push(redditNum)
 
                                                 }
-                                                toneName = ''
+                                                toneName = []
                                                 for (let i = 0; i < learning.document_tone.tones.length; i++) {
-                                                        toneName += learning.document_tone.tones[i].tone_name + '  '
+                                                        toneName.push(learning.document_tone.tones[i].tone_name)
 
                                                 }
                                                 // learning.document_tone.tones[0].score
-                                                console.log(toneNum)
+                                                // console.log(toneNum)
                                                 // console.log( 'tone',learning.document_tone.tones);
                                                 // Output Watson's tone analysis to the console.
-                                                console.log("The tone analysis for \'" + text + "\' is:\n");
-                                                console.log(tone)
+                                                // console.log("The tone analysis for \'" + text + "\' is:\n");
+                                                // console.log(tone)
 
                                                 const redditWatson = {
                                                         reddit: redditInfo,

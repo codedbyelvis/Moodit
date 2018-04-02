@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .bouncy {
     animation: bouncy 4s 3 linear;
     position: relative;
@@ -65,3 +66,8 @@ button.graphbtn:focus {outline:0};
 
 
 
+=======
+.profile_loading{
+    background-color:blue;
+}
+>>>>>>> master

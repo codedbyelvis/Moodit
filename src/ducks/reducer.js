@@ -14,6 +14,8 @@ const GET_USERINFO = 'GET_USERINFO';
 // const GET_USERINFO_PENDING = 'GET_USERINFO_PENDING'
 const GET_USERINFO_FULFILLED = 'GET_USERINFO_FULFILLED'
 
+const CLEAR_STORE = 'CLEAR_STORE'
+
 // const GET_TEXT = 'GET_TEXT';
 // const GET_TEXT_FULFILLED = 'GET_TEXT_FULFILLED';
 // const GET_MOOD = 'GET_MOOD';
@@ -31,8 +33,21 @@ export default function reducer(state = initialState, action) {
                 watsonData: action.payload.data.watson,
                 time: action.payload.data.reddit[0].created_utc,
                 picture: action.payload.data.iconPic,
-                watsonNum: action.payload.data.watsonNum,
+                watsonNum: action.payload.data.watsonNum.map(num=>{
+                    return parseInt(num, 10)
+                }),
                 watsonToneName: action.payload.data.toneId
+            });
+
+            case CLEAR_STORE:
+            return Object.assign({}, state, {
+                user: action.payload.newStore ,
+                redditData: action.payload.newStore,
+                watsonData: action.payload.newStore,
+                time: action.payload.newStore,
+                picture: action.payload.newStore,
+                watsonNum: action.payload.newStore,
+                watsonToneName: action.payload.newStore
             });
 
         // case GET_TEXT_FULFILLED:
@@ -50,14 +65,23 @@ export function getUser(user) {
     console.log(user)
     const info = axios.post('/api/user', { user }).then(
         resp => {
-            // console.log(resp)
+            console.log(resp)
             return resp;
         }
     )
-    console.log(info);
+    // console.log(info);
     return {
         type: GET_USERINFO,
         payload: info
+    }
+}
+
+export function clearReducer(){
+    let newStore = {}
+
+    return{
+        type: CLEAR_STORE,
+        payload: newStore
     }
 }
 
