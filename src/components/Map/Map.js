@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import MyCard from '../Card/MyCard'
 import './Map.css'
+import MapCard from '../Card/MapCard'
 
 class Map extends Component {
   constructor(props) {
@@ -14,16 +15,14 @@ class Map extends Component {
     };
   }
 
-  getInfo() {
+
+  componentDidMount() {
     axios.get("/api/comments").then(({ data }) => {
       console.log(data);
-      this.setState({
-        mapInformation: data,
-        loading: false
-      });
+  
     });
+    let mapData = [] ;
   }
-
   getComments() {
     this.setState({
       loadingComments: false
