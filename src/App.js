@@ -6,7 +6,9 @@ import Map from "./components/Map/Map";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
 import MoodditText from "./components/SVG/MoodditText";
+// import Navbar from './components/Navbar/Navbar'
 // import SvgReddit from "./components/SVG/SvgReddit";
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -25,14 +27,14 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
+              <div className = 'noDots'>
             <Navbar 
             className="moodit_nav" 
-            color="unique-color-dark" 
+            color="grey lighten-2" 
             dark 
             expand="lg"
             fixed="top" 
             scrolling>
-              
                 <NavItem>
                   <NavLink className="nav-link-profile moodit_brand_nav" to="/">
                   <MoodditText />
@@ -50,6 +52,7 @@ class App extends Component {
                 </NavItem>
               
             </Navbar>
+              </div>
             <Switch>
               <Route component={Home} exact path="/" />
               <Route component={Login} path="/login" />

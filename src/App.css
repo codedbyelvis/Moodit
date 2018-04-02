@@ -1,3 +1,14 @@
 .moodit_nav{
   height: 80px;
 }
+.moodit_nav{
+  height: 80px;
+  background-color: lightgray !important;
+ }
+ .moodit_nav ul{
+  list-style-type: none
+ }
+
+ .noDots {
+   list-style-type: none;
+ }
