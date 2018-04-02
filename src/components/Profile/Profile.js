@@ -7,127 +7,6 @@ import axios from "axios";
 import "./Profile.css";
 
 class Profile extends Component {
-<<<<<<< HEAD
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: true,
-            color: 'rgba(255,255,255,0)',
-            firstLoad: true
-        }
-    }
-    
-    componentWillUnmount(){
-        this.props.clearReducer()
-    }
-    
-    render() {
-        if(this.props.watsonNum && this.props.watsonToneName && this.state.firstLoad){
-            
-            var ctxB = document.getElementById("barChart").getContext('2d');
-            var myBarChart = new Chart(ctxB, {
-                type: 'bar',
-                data: {
-                    labels: this.props.watsonToneName,
-                    datasets: [{
-                        label: '# of Votes',
-                        data: this.props.watsonNum,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }
-                }
-            });
-            let colorPicker = (numbs, watsonTone) =>{
-                let color = '';
-                console.log(numbs);
-                for(let i =0; i < numbs.length; i++){
-                    var max = Math.max(...numbs);
-                    var sameIndex = numbs.indexOf(max);
-                }
-                
-                console.log(watsonTone[sameIndex]);
-                switch (watsonTone[sameIndex]) {
-                    case 'Anger':
-                    console.log('I am Angry.');
-                    color = `rgba(255, 0, 0, ${max})`;
-                    break;
-                    case 'Fear':
-                    console.log('I am Fearful.');
-                    color = `rgba(128, 0, 128, ${max})`;            
-                    break;
-                    case 'Joy':
-                    console.log('I am Joyful.');
-                    color = `rgba(255, 255, 0, ${max})`;
-                    break;
-                    case 'Sadness':
-                    console.log('I am Sad.');
-                    color = `rgba(0, 0, 255, ${max})`;
-                    break;
-                    case 'Analytical':
-                    console.log('I am Analytical.');
-                    color = `rgba(0, 255, 255, ${max})`;
-                    break;
-                    case 'Confident':
-                    console.log('I am Confident.');
-                    color = `rgba(0, 128, 0, ${max})`;
-                    break;
-                    case 'Tentative':
-                    console.log('I am Tentative.');
-                    color = `rgba(128, 128, 128, ${max})`;
-                    break;
-                    default:
-                    console.log('Sorry, we are out of emotions');
-                }
-                this.setState({
-                    color:color,
-                    firstLoad:false
-                })
-            }; colorPicker(this.props.watsonNum, this.props.watsonToneName);
-            var colorPicked = this.state.color;
-        }
-        
-        return (
-            
-            <div>
-                    <div style={{backgroundColor: this.state.color}}>
-                         <div className="row">
-          <div className="col-md-3 green">
-            <img className = 'redditpic' src={this.props.picture} alt="" />
-          </div>
-          <div className="col-md-9 gre">
-            <h1>Hello, {this.props.user}</h1>
-            <canvas id="barChart" style={{backgroundColor: 'white'}}></canvas>
-            <h3>
-              Watson has done a thorough analysis of your Reddit comments and
-              discovered some interesting insights. Here's your Moodit profile
-            </h3>
-            <h3>{this.props.watsonNum}</h3>
-            <h3>Label: {this.props.watsonToneName}</h3>
-=======
   constructor(props) {
     super(props);
     this.state = {
@@ -203,7 +82,6 @@ class Profile extends Component {
               </div>
               <canvas id="barChart" />
             </div>
->>>>>>> 15420eb3596d53583e30b2e2985bab21d56eb221
           </div>
         </div>
       </div>
