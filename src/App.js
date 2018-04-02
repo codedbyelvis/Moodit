@@ -25,31 +25,30 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Navbar color="unique-color-dark" dark>
-              <NavbarBrand href="#">
-              <MoodditText />
-                {/* <img
-                  src="https://mdbootstrap.com/img/logo/mdb-transparent.png"
-                  height="30"
-                /> */}
-              </NavbarBrand>
-              <Collapse isOpen={this.state.collapse} navbar>
-                <NavItem active>
-                  <NavLink className="nav-link" to="/">
-                    Home
+            <Navbar 
+            className="moodit_nav" 
+            color="unique-color-dark" 
+            dark 
+            expand="lg"
+            fixed="top" 
+            scrolling>
+              
+                <NavItem>
+                  <NavLink className="nav-link-profile moodit_brand_nav" to="/">
+                  <MoodditText />
                   </NavLink>
-                </NavItem>
+                </NavItem >
                 <NavItem>
                   <NavLink className="nav-link-profile" to="/profile">
                     Profile
                   </NavLink>
-                </NavItem>
+                </NavItem >
                 <NavItem>
                   <NavLink className="nav-link-map" to="/map">
                     Map
                   </NavLink>
                 </NavItem>
-              </Collapse>
+              
             </Navbar>
             <Switch>
               <Route component={Home} exact path="/" />
