@@ -150,8 +150,8 @@ app.get('/api/comments', (req, res, next) => {
                                 }
                                 redditHot.push(postInfo)
                                 newArray.push(r.getSubmission(subId).comments)
-
                         }
+                        
                         //gathering all the comments for each post and placing them in the Array in the correct order
                         Promise.all(newArray).then(responses => {
                                 redditHot.forEach((post, i) => {
