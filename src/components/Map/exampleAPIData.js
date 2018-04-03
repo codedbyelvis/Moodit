@@ -6,6 +6,12 @@ redditComments: // this is an ARRAY of all the redit comments, each comment is a
 subId: //a string of the subreddit id?
 subName: // a string of the subreddit title
 watsonInfo: //an object that contains the items below
+document_tone: // an object 
+tones: // an array with objects that have the following keys:
+    score: 0.513835
+    tone_id: "anger"
+    tone_name: "Anger"
+
 
 
 
