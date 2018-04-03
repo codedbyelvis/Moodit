@@ -1153,9 +1153,9 @@ var jsonResponse = [{
         "Honeymoon Anniversary celebrations, nothing to see here folks",
         "This is so weird.  Normally when the Russians buy a house from Trump they don't ever go to it - it is just to launder money."
       ],
-      "subId": "88z927",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88z927",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.518252,
@@ -1771,9 +1771,9 @@ var jsonResponse = [{
         "I gotta say I think the lack of width variation throughout the line makes it look less natural. ",
         "Makes me think of the movie Hugo.  Also, the mechanics inside this machine must be amazing!!"
       ],
-      "subId": "88yygb",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yygb",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.51145,
@@ -2478,12 +2478,12 @@ var jsonResponse = [{
         "You're fine as fuck. Just so you know.",
         "Goodness you are handsome. Congratulations and happy birthday!!"
       ],
-      "subId": "88zc13",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88zc13",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
-              score: 0.722402,
+              score: 0.988241,
               tone_id: "joy",
               tone_name: "Joy"
             }
@@ -3234,9 +3234,9 @@ var jsonResponse = [{
         "A request for him to play all-star on the sharpest tool in his shed",
         "and on the other end of the spectrum:\n\nhttps://imgur.com/gallery/CxIHP"
       ],
-      "subId": "88y9s9",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88y9s9",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.546853,
@@ -4255,9 +4255,9 @@ var jsonResponse = [{
         "5 more minutes of this and I'm gonna get mad!",
         "The dog was surprisingly patient considering the cat was chewin' his face off and steppin' on his eye. "
       ],
-      "subId": "88y21x",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88y21x",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.578726,
@@ -5205,9 +5205,9 @@ var jsonResponse = [{
         "Wow, I'm surprised that i.reddit.com isn't being scrapped without a replacement. Good to see I was wrong.",
         "Barring the already simplistic nature of mobile, do you have any ideas or plans for redesigns of the app?"
       ],
-      "subId": "891stx",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "891stx",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.59073,
@@ -6481,9 +6481,9 @@ var jsonResponse = [{
         "i like how many comments i see with people disbelieving. i have been at the game area at wal-mart or target a quite a few times since the switch came out and a few times, there were people deciding on a game or just being curious about the switch. i remember showing one family the demos target had for Mario Kart, Zelda and Mario Oddysey to sell them on it and those  games. like, i feel like any good natured person with their hand even remotely close to the pulse of the gaming industry would hep out with suggestions for clueless parents.",
         "Getting someone Trolls and I is quite the April Fool's joke. "
       ],
-      "subId": "88x46i",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88x46i",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.605519,
@@ -7493,9 +7493,9 @@ var jsonResponse = [{
         "We should raid the video and support our boy Tobey! He is spreading propaganda! ",
         "Johnathon whispered to Kayla intently. He leaned in close as to more privately bequeath his message. \"Traps are gay.\" He grasped her hand; electricity flowed between them. It was the truth which lied deep within their hearts. It had searched for endless epochs for a conduit. She nodded intently, she knew this to be the truth. Was it too much to grasp? Perhaps, it was, in reality, as simple as Johnathon grasping her hand. She leaned in to kiss him. Seconds passed and with a breath deprived whisper she repeated what she held in her heart to be true. \"Traps are gay.\""
       ],
-      "subId": "88z03q",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88z03q",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.520656,
@@ -7846,9 +7846,9 @@ var jsonResponse = [{
         "This is an 8kb video file? In what format? How is it run/executed? What is a demoscene?\n",
         "8K of instructions and a few hundred megabytes of dependencies."
       ],
-      "subId": "88ywm5",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88ywm5",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.506278,
@@ -8842,9 +8842,9 @@ var jsonResponse = [{
         "From your user page it looks like you play battle field do you play with her too? And is she even aware of this post?",
         "I can't believe her shirt stretched that much over the years"
       ],
-      "subId": "8909f2",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "8909f2",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.669815,
@@ -9982,9 +9982,9 @@ var jsonResponse = [{
         "tap, tap, tap, tap, tap, scratch, tap, tap, scratch, scrath, run away!",
         "That kitten has an evil dead paw. "
       ],
-      "subId": "88ymqy",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88ymqy",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.616087,
@@ -10963,9 +10963,9 @@ var jsonResponse = [{
         "Can we have a banana for scale?",
         "Video needs a banana for scale. 2/10"
       ],
-      "subId": "890b7f",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "890b7f",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.570238,
@@ -12022,9 +12022,9 @@ var jsonResponse = [{
         "My cat LOVES being held like that. What makes it even weirder is that he pretty much hates being touched unless he climbs on top of you and demands pets.",
         "Can I crash on your couch?"
       ],
-      "subId": "88z59l",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88z59l",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.69326,
@@ -13262,9 +13262,9 @@ var jsonResponse = [{
         "Nope, nothing suspicious about that truck. It totally doesn't look like a front for a supervillian's endgame to make all of society pay for their insolence. ",
         "Source : https://imgur.com/gallery/SaBzO\n\nCaption : A romantic candlelit dinner would be incomplete without __________.\n\nslightly relevant : [cards against muggles](https://fuckmywallet.co/products/cards-against-muggles-wizard-edition) and [cards against your childhood](https://www.amazon.com/Cards-Against-Your-Childhood-Humanity/dp/B0788L7NKH)\n\n"
       ],
-      "subId": "88zi6l",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88zi6l",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.544781,
@@ -13953,9 +13953,9 @@ var jsonResponse = [{
         "r/puns",
         "[Coolant leek! We've got a coolant leek, people! Everybody out!](https://media.giphy.com/media/9KITtxw0BZBXW/giphy.gif)"
       ],
-      "subId": "88yjhm",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yjhm",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.562677,
@@ -14606,9 +14606,9 @@ var jsonResponse = [{
         "I would paint my balls to look like a field mouse and dip them into a tank of western diamond back rattle snakes just to take a 5 minute nap in the same rest-stop bathroom her gay cousin had diarrhea in 14 years ago",
         "Zip"
       ],
-      "subId": "88yy2b",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yy2b",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.503302,
@@ -15213,9 +15213,9 @@ var jsonResponse = [{
         "Poor kids... brave as hell too. ",
         "Welcome to Britain. Try not to hate us or traumatize the kids."
       ],
-      "subId": "88y08o",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88y08o",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.580651,
@@ -16224,9 +16224,9 @@ var jsonResponse = [{
         "It would have been the greatest photo, if people knew it was you. - Prove it was you, could be anybody in that costume.",
         "Too bad you can never prove it's actually you..."
       ],
-      "subId": "88yp3f",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yp3f",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.591408,
@@ -17400,9 +17400,9 @@ var jsonResponse = [{
         "My 3 yr old got excited... lol",
         "Every girl with black hairs favorite tattoos. "
       ],
-      "subId": "88yn6z",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yn6z",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.549708,
@@ -18167,9 +18167,9 @@ var jsonResponse = [{
         "A \" Fuuutbhawl Keeepaah \"......",
         "[deleted]"
       ],
-      "subId": "88xstr",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88xstr",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.645004,
@@ -19265,9 +19265,9 @@ var jsonResponse = [{
         "Costco?",
         "You just know those thieves would have been riddled with 100 bullets if they were black"
       ],
-      "subId": "88y8em",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88y8em",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.588555,
@@ -20124,9 +20124,9 @@ var jsonResponse = [{
         "LOVE the silver around the eyes! Beautiful!",
         "Khaajit has coin..."
       ],
-      "subId": "88zofn",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88zofn",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.644638,
@@ -20892,9 +20892,9 @@ var jsonResponse = [{
         "Long live the king? I half expected you to throw him into a stampede of wildebeest!",
         "Long live the original! Kimba! \n(Give credit where credit is due)"
       ],
-      "subId": "88yylw",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88yylw",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.521888,
@@ -21540,9 +21540,9 @@ var jsonResponse = [{
         "To break that stone with an hammer is still impressive",
         "r/mildlyunexpected"
       ],
-      "subId": "88ykg4",
-      "watsonInfo": {
-        "document_tone": {
+      subId: "88ykg4",
+      watsonInfo: {
+        document_tone: {
           tones: [
             {
               score: 0.524461,
