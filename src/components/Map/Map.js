@@ -13,61 +13,69 @@ class Map extends Component {
       mapInformation: [],
       loading: true,
       loadingComments: true,
-      currentComment: ''
+      currentComment: '',
+      filterBy: 'All',
+      noResults: 0
     };
   }
 
+//Change getInfo to componentDidMount when ready to go live.
+  getInfo() {
+    axios.get("/api/comments").then(({ data }) => {
+      console.log(data);
+      this.setState({
+        mapInformation: data,
+        loading: false
+      });
+    });
+  }
 
-  // componentDidMount() {
-  //   axios.get("/api/comments").then(({ data }) => {
-  //     console.log(data);
-  //     this.setState({
-  //       mapInformation: data,
-  //       loading: false
-  //     });
-  //   });
-  // }
 
-
-  // componentDidMount() {
-  //   axios.get("/api/comments").then(({ data }) => {
-  //     console.log(data);
-  
-  //   });
-  //   let mapData = [] ;
-  // }
-
+//Use this for fake data. Comment out when ready to go live
   componentDidMount() {
     this.setState({
       mapInformation: jsonResponse,
-      loading: false
+      loading: false,
+      filterBy: 'All'
     })
   }
+
   
-   
-   animatedComments(){
-    return "commentStream";
-  }
- 
   render() {
-    let readyToShow = this.state.mapInformation
-    let topPosts = this.state.mapInformation.map((postObj, i) => {
-      // if(postObj.watsonInfo){
+    var iterator =0;
+    let waitingIcon = "Waiting for state to load";
+
+    let readyToShow = this.state.mapInformation //use this to determine if info has been loaded
+
+    
+    let postsToShow = this.state.mapInformation.map((postObj, i) => {
+      
+      let objTonesArray = postObj.watsonInfo.document_tone.tones
+      let toneTags = objTonesArray.map( (toneObj, i) =>{
+        return (
+          <p className="post_tones" key={i}> {toneObj.tone_name}: {Math.floor((toneObj.score)*100)}% </p>  
+        )
+      })
       let commentArray = postObj.redditComments
-      // let commentStream = commentArray.map( (comment) =>{
-      //   setTimeout( function(){
-      //     this.setState({currentComment: comment})
-      //   },1000)
-      // })
-      let commentStream = commentArray.map( (comment) =>{
-        return <p>{comment}</p>
+      
+      let commentStream = commentArray.map( (comment, i) =>{
+        return <p key={i} >{comment}</p>
+      })
+    
+      
+      let shouldShow = objTonesArray.filter( (toneObj) => {
+        if(this.state.filterBy === "All"){
+          return "All"
+        } else if(toneObj.tone_name === this.state.filterBy){
+          return toneObj.tone_name === this.state.filterBy
+        } 
       })
 
-      
+      if(shouldShow.length > 0){
 
-      return (
-        <div key={i}>
-          <div class="post_card">            
+        return (
+          <div key={i}>
+          <div className="post_card">            
            
            <a href ={postObj.link} target="_blank">
            <div className="_cardHeader">
@@ -78,24 +86,20 @@ class Map extends Component {
 
             <div className="_subreddit" >
             <p>{`subreddit: ${postObj.subName}`}</p>
-            </div>
-
-             <div className="_emotions" >
-            <p>JOY: 56% |  ANALYTICAL: 27% </p>
-            </div>
-
-            <div className="_comments" >
             <img src="comments.svg" />
                <p>{postObj.redditComments.length}</p>
             </div>
+            
 
-         
+             <div className="_emotions" >
+            {toneTags}
+            </div>
+
            </div>
            </a>
 
-
-            <div class="post_comments">
-              
+            <div className="post_comments">
+    
                 <div className="comment_container" >
                  {commentStream}
                  {/* {this.state.currentComment} */}
@@ -110,24 +114,46 @@ class Map extends Component {
 
           </div>
         </div>
-      )
+
+        );
+      } else {
+      iterator++
+        console.log(iterator)
+      }
     })
+    
+    
 
     return (
       <div>
         {!this.state.loading === true ?
-          <div className="card_grid" >
-            {topPosts}
-          </div>
-          :
-          <div className="shadow">
-            <img
-            className="loading"
-              src="loading.svg"
-            />
-          </div>
-        }
 
+        <div>
+                <div className="mood_key">
+                <h5 onClick={()=>this.setState({filterBy:'Joy'})} className="key_moods joy" >JOY</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Analytical'})} className="key_moods analytical" >ANALYTICAL</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Anger'})} className="key_moods angry" >ANGER</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Sadness'})} className="key_moods sad" >SADNESS</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Tentative'})} className="key_moods tentative" >TENTATIVE</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Confident'})} className="key_moods happy" >CONFIDENT</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Fear'})} className="key_moods depressed" >FEAR</h5>
+                <h5 onClick={()=>this.setState({filterBy:'All'})} className="key_moods all" >SHOW ALL</h5>
+                </div>
+
+                <div className="card_grid" >
+                { iterator===25 ? "No results" : postsToShow  }
+                </div>
+
+        </div>
+          :
+            <div className="shadow">
+              <div>Loading...</div>
+              <img
+                className="loading"
+                src="loading.svg"
+              />
+            </div>
+        }
       </div>
 
     );
