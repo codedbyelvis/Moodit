@@ -4,6 +4,7 @@ import axios from "axios";
 import MyCard from '../Card/MyCard'
 import './Map.css'
 import jsonResponse from  './data.js'
+import MapCard from '../Card/MapCard'
 
 class Map extends Component {
   constructor(props) {
@@ -27,12 +28,22 @@ class Map extends Component {
   //   });
   // }
 
+
+  // componentDidMount() {
+  //   axios.get("/api/comments").then(({ data }) => {
+  //     console.log(data);
+  
+  //   });
+  //   let mapData = [] ;
+  // }
+
   componentDidMount() {
     this.setState({
       mapInformation: jsonResponse,
       loading: false
     })
   }
+  
    
    animatedComments(){
     return "commentStream";
