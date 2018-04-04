@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import MyCard from '../Card/MyCard'
 import './Map.css'
-import './animations.css'
 import jsonResponse from  './data.js'
 import MapCard from '../Card/MapCard'
 
@@ -16,11 +15,35 @@ class Map extends Component {
       loadingComments: true,
       currentComment: '',
       filterBy: 'All',
-      noResults: 0
+      noResults: 0,
+      currentComments_post0: [],
+      currentComments_post1: [],
+      currentComments_post2: [],
+      currentComments_post3: [],
+      currentComments_post4: [],
+      currentComments_post5: [],
+      currentComments_post6: [],
+      currentComments_post7: [],
+      currentComments_post8: [],
+      currentComments_post9: [],
+      currentComments_post10: [],
+      currentComments_post11: [],
+      currentComments_post12: [],
+      currentComments_post13: [],
+      currentComments_post14: [],
+      currentComments_post15: [],
+      currentComments_post16: [],
+      currentComments_post17: [],
+      currentComments_post18: [],
+      currentComments_post19: [],
+      currentComments_post20: [],
+      currentComments_post21: [],
+      currentComments_post22: [],
+      currentComments_post23: [],
+      currentComments_post24: [],
+      currentComments_post25: [],
   
     };
-    this.showComment = this.showComment.bind(this)
-    // this.myCallback = this.myCallback.bind(this)
   }
 
 //Change getInfo to componentDidMount when ready to go live.
@@ -44,35 +67,11 @@ class Map extends Component {
     })
   }
 
-  showComment(animatedComments){
-    // setInterval( myCallback, 500)
-    console.log(animatedComments[0], animatedComments[1] )
-  
-    //  return <p className="animatedComment" >{animatedComments[2]}</p>
-    let animatedArray = []
-    for(let i = 0; i<animatedComments.length; i++){
-     animatedArray.push( <p className="slideUp" >{animatedComments[i]}</p>)
-    }
-    return animatedArray;
-
-    // for(let i = 0; i<animatedComments.length; i++){
-    //   setTimeout( function(){
-    //       return animatedComments[i]
-    //   },500)
-    // }
-
-  }
-  // myCallback(){
-  //  return commentStream[0]
-  // }
   
   render() {
-    var allCommentsArray=[];
     var iterator =0;
     let waitingIcon = "Waiting for state to load";
     let noResults = <div className="no_results"><h2 >Sorry, it appears there were no posts matching that emotion</h2></div>
-
-    
 
     let readyToShow = this.state.mapInformation //use this to determine if info has been loaded
 
@@ -87,10 +86,9 @@ class Map extends Component {
       })
       //commentArray is the array of comments for an individual post
       let commentArray = postObj.redditComments
-     allCommentsArray.push(commentArray)
-
-     let animatedComments = [...commentArray]
-
+      //place each post's comment array into state in order to be able to animate them on the cards
+      let stateName = currentComments_post+i;
+      this.setState({[stateName]:commentArray})
       let commentStream = commentArray.map( (comment, i) =>{
         return <p className="comment_in_the_stream" key={i} >{comment}</p>
       })
@@ -134,9 +132,9 @@ class Map extends Component {
             <div className="post_comments">
     
                 <div className="comment_container" >
-                 {/* {commentStream[0]} */}
-                 {this.showComment(animatedComments)}
-                 {/* {animatedComments} */}
+                 {commentStream}
+                 {/* {this.state.currentComment} */}
+                 {/* {this.animatedComments() } */}
                 </div>
               
             </div>
@@ -146,6 +144,7 @@ class Map extends Component {
                 </div> */}
 
           </div>
+
         </div>
 
         );
@@ -160,12 +159,8 @@ class Map extends Component {
     return (
       <div>
         {!this.state.loading === true ?
-        
-        <div className="map_bg" >
-          <div className="moodmap_title">
-          <h1>Welcome to the Mood Map</h1>
-          <p>Explore popular Reddit posts based on their emotional vibe</p>
-          </div>
+
+        <div>
                 <div className="mood_key">
                 <h5 onClick={()=>this.setState({filterBy:'Joy'})} className=" key_moods joy" >JOY</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Analytical'})} className="key_moods analytical" >ANALYTICAL</h5>
@@ -184,7 +179,7 @@ class Map extends Component {
         </div>
           :
             <div className="shadow">
-              
+              <div>Loading...</div>
               <img
                 className="loading"
                 src="loading.svg"
