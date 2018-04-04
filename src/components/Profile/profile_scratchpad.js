@@ -2,17 +2,27 @@ import React, { Component } from "react";
 import { getUser, clearReducer } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import { Chart } from "react-chartjs-2";
-import { Button, Card, CardBody, CardImage, CardText } from "mdbreact";
+import {Input, Button, Card, CardBody, CardImage, CardText } from "mdbreact";
 import axios from "axios";
 import "./Profile.css";
+import Login from '../Login/Login'
+import happy_reddit from "../../assets/happy_reddit.svg";
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true
-    };
-  }
+ constructor(props) {
+   super(props);
+   this.state = {
+     loading: true,
+     color: 'rgba(255,255,255,0)',
+    firstLoad: true
+   };
+ }
+
+ componentDidMount() {
+   if(this.props.user==undefined){
+    <div className="no_user" > "Sorry no user data"</div>
+   }
+ }
 
  componentWillUnmount() {
    this.props.clearReducer();
@@ -112,7 +122,10 @@ class Profile extends Component {
    return (
      <div>
             {/* <div style={{backgroundColor: this.state.color}}> */}
-       <div className="profile_wrapper">
+
+      { this.props.user ? 
+
+       <div className=" profile_wrapper">
          <div className="row">
            <div className="col-md-3 ">
              <img className="redditpic" src={this.props.picture} alt="" style={{borderColor: this.state.color}}/>
@@ -132,6 +145,59 @@ class Profile extends Component {
          {/* </div> */}
          </div>
        </div>
+
+        :
+
+        // <div className="no_user" >
+        // <Login />
+        // <h4>Please enter your Reddit Id and Watson will analyze your posts to see what emotions you communicate</h4></div>
+        
+        <div className="home_profile_login">
+        <div></div>
+
+
+          <img src={happy_reddit} />
+
+
+          <div className="home_login" >
+
+            <form>
+              <h1 >What's your moodit?</h1>
+              <h1 >Let Watson analyze you.</h1>
+
+              <Input
+                label="Type Username"
+                icon="user"
+                validate
+                error="wrong"
+                success="right"
+                className="inputModal2_Title"
+                placeholder="username"
+                onChange={e => this.setState({ newUser: e.target.value })}
+              />
+  
+              <div className="text-center">
+                
+                  <Button
+                    color="primary"
+                    onClick={() => this.props.getUser(this.state.newUser)}
+                    >
+                    Search
+                  </Button>
+                
+              </div>
+            </form>
+          </div>
+
+
+                  <div></div>
+        </div>
+
+
+
+      }
+
+
      </div>
    );
  }
