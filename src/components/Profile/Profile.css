@@ -1,8 +1,16 @@
+
 .profile_loading{
     background-color:blue;
 }
 .profile_greeting{
     /* background-color: rebeccapurple; */
+}
+.no_user{
+    margin: 500px auto;
+}
+.home_profile_login{
+    margin-top: 400px;
+    
 }
 .profile_wrapper{
     margin-top: 100px;

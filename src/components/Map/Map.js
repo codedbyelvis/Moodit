@@ -15,12 +15,13 @@ class Map extends Component {
       loadingComments: true,
       currentComment: '',
       filterBy: 'All',
-      noResults: 0
+      noResults: 0,
+      currentComments: []
     };
   }
 
 //Change getInfo to componentDidMount when ready to go live.
-  getInfo() {
+  compdidmount() {
     axios.get("/api/comments").then(({ data }) => {
       console.log(data);
       this.setState({
@@ -44,6 +45,7 @@ class Map extends Component {
   render() {
     var iterator =0;
     let waitingIcon = "Waiting for state to load";
+    let noResults = <div className="no_results"><h2 >Sorry, it appears there were no posts matching that emotion</h2></div>
 
     let readyToShow = this.state.mapInformation //use this to determine if info has been loaded
 
@@ -59,7 +61,7 @@ class Map extends Component {
       let commentArray = postObj.redditComments
       
       let commentStream = commentArray.map( (comment, i) =>{
-        return <p key={i} >{comment}</p>
+        return <p className="comment_in_the_stream" key={i} >{comment}</p>
       })
     
       
@@ -108,9 +110,9 @@ class Map extends Component {
               
             </div>
 
-                <div className="_readMore">
+                {/* <div className="_readMore">
                 <p>read more...</p>
-                </div>
+                </div> */}
 
           </div>
 
@@ -131,18 +133,18 @@ class Map extends Component {
 
         <div>
                 <div className="mood_key">
-                <h5 onClick={()=>this.setState({filterBy:'Joy'})} className="key_moods joy" >JOY</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Joy'})} className=" key_moods joy" >JOY</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Analytical'})} className="key_moods analytical" >ANALYTICAL</h5>
-                <h5 onClick={()=>this.setState({filterBy:'Anger'})} className="key_moods angry" >ANGER</h5>
-                <h5 onClick={()=>this.setState({filterBy:'Sadness'})} className="key_moods sad" >SADNESS</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Anger'})} className="key_moods anger" >ANGER</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Sadness'})} className="key_moods sadness" >SADNESS</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Tentative'})} className="key_moods tentative" >TENTATIVE</h5>
-                <h5 onClick={()=>this.setState({filterBy:'Confident'})} className="key_moods happy" >CONFIDENT</h5>
-                <h5 onClick={()=>this.setState({filterBy:'Fear'})} className="key_moods depressed" >FEAR</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Confident'})} className="key_moods confident" >CONFIDENT</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Fear'})} className="key_moods fear" >FEAR</h5>
                 <h5 onClick={()=>this.setState({filterBy:'All'})} className="key_moods all" >SHOW ALL</h5>
                 </div>
 
                 <div className="card_grid" >
-                { iterator===25 ? "No results" : postsToShow  }
+                { iterator===25 ? noResults : postsToShow  }
                 </div>
 
         </div>
