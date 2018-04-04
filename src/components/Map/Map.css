@@ -1,3 +1,9 @@
+body{
+
+  background: linear-gradient(to right, rgba( 105, 153, 51, 0.3) 0%,rgba(44, 134, 156, 0.5) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
 .card_grid {
   margin-top: 10px;
   display: grid;
@@ -5,8 +11,19 @@
   grid-gap: 20px;
   padding: 0 20px;
 }
+.moodmap_title{
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 70px;
+  text-align: center;
+}
+.moodmap_title h3{
+  font-weight: 600 !important;
+  margin-bottom: -3px;
+}
 .mood_key{
-  margin-top: 100px;
+  margin-top: 0px;
   margin-left: 20px;
   margin-right: 20px;
   display: grid;
@@ -25,64 +42,64 @@
 
 
 .joy{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .joy:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .analytical{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .analytical:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .anger{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .anger:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .sadness{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .sadness:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .tentative{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .tentative:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .confident{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .confident:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .fear{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .fear:hover{
   background-color: rgb(105, 153, 51) !important;
 }
 .all{
-  background-color: rgba(105, 153, 51, 0.7) !important;
-  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
   border-radius: 4px;
 }
 .all:hover{
@@ -188,6 +205,26 @@
   line-height: 18px;
   margin-bottom: 5px;
 }
+
+
+.animatedComment{
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
 ._readMore{
   position: absolute;
   bottom: 0;
