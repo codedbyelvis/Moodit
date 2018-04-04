@@ -33,7 +33,7 @@ class App extends Component {
             <Link className="moodit_logo" to="/">Home</Link>
             <div className="nav_links" >
               <ul>
-              <li className="checkEmotions"><Link to="/profile">My Emotions</Link></li>
+              <li className="checkEmotions"><Link to="/login">My Emotions</Link></li>
               <li className="checkMap"><Link to="/map">Mood Map</Link></li>
               </ul>
             </div>
