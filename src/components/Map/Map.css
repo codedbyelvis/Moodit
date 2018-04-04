@@ -1,9 +1,128 @@
+body{
+
+  background: linear-gradient(to right, rgba( 105, 153, 51, 0.3) 0%,rgba(44, 134, 156, 0.5) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+
 .card_grid {
-  margin-top: 100px;
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
   padding: 0 20px;
+}
+.moodmap_title{
+  display: block;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 70px;
+  text-align: center;
+}
+.moodmap_title h1{
+  font-weight: 600 !important;
+  margin-bottom: -3px;
+  /* background: -webkit-linear-gradient( rgb(0, 110, 138), rgb(45, 190, 130));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  
+
+
+  color: rgba(20,20,20,.7)
+}
+.mood_key{
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  grid-gap: 10px;
+}
+.key_moods{
+  text-align: center;
+  color: white;
+  padding: 5px;
+  font-size:16px;
+  font-weight: 400;
+  cursor: pointer;
+
+}
+
+
+.joy{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.joy:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.analytical{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.analytical:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.anger{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.anger:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.sadness{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.sadness:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.tentative{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.tentative:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.confident{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.confident:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.fear{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.fear:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.all{
+  background-color: rgba(1, 1, 1, 0.1) !important;
+  border: 2px solid rgba( 1, 1, 1, 0.15) !important;
+  border-radius: 4px;
+}
+.all:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+
+.no_results{
+  text-align: center !important;
+  margin-top: 300px !important;
+  font-family: 'Amatic SC', cursive;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.post_tones{
+  margin-right: 5px;
 }
 .mood_bar{
   display: grid;
@@ -19,6 +138,7 @@
   align-items: center;
   height: 400px;
   overflow: hidden;
+  position: relative;
 }
 .card_header {
   position: relative;
@@ -71,7 +191,11 @@
   }
 
 .post_comments{
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    height: 210px;
+    overflow: hidden;
 }
 .comments{
   height: 20px;
@@ -79,17 +203,42 @@
 }
 .comment_container{
   overflow: hidden;
+  
 }
+
 .comment_container p{
-  font-style: italic;
-  font-size: 15px;
-  line-height: 17px;
-  margin-bottom: -12px;
+  font-family: 'Handlee', cursive;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
 }
+
+
+.animatedComment{
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
 ._readMore{
+  position: absolute;
+  bottom: 0;
   height: 20px;
   width: 100%;
-  background: lightgray;
+  margin-bottom: 4px;
+  margin-left: 15px;
 }
 /* .shadow{
   display: grid;
@@ -103,7 +252,12 @@
     margin-left: 40%;
   }
 
-
+  .nothing_to_show{
+    margin-top: 400px;
+    background: gray;
+    height: 40px;
+    width: 200px;
+  }
 
 
   ._post_card {
@@ -121,12 +275,12 @@
     
     box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, .2);
     display: grid;
-    grid-template-columns: 1fr 1fr 60px;
+    grid-template-columns: 1fr 1fr 65px;
     grid-template-rows: auto 20px 30px;
     grid-template-areas:
       "title  title   title"
       "subreddit  subreddit  subreddit  "
-      "emotions  emotions   comments"
+      "emotions  emotions   emotions"
   }
   ._cardHeader h4{
     font-size: 18px;
@@ -147,6 +301,15 @@
     grid-area: subreddit;
     margin-left: 15px;
     color: white;
+    display: inline;
+  }
+
+  ._subreddit img{
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 3px;
+    display: inline;
   }
 
   ._comments {
@@ -155,11 +318,14 @@
     text-align: right;
     margin-right: 15px;
   }
+  ._comments p{
+    margin-left: 5px;
+
+  }
 
   ._comments img{
     height: 20px;
     width: 20px;
-    
   }
 
   ._emotions {
@@ -167,4 +333,15 @@
     color: white;
     margin-left: 15px;
 
+  }
+
+  @media all and (max-width: 900px) {
+   .key_moods{
+     font-size: 10px !important;
+     font-weight: 400;
+     margin-bottom: 2px;
+   }
+   .mood_key{
+     grid-gap: 3px;
+   }
   }
