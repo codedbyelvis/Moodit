@@ -31,7 +31,7 @@ class Login extends Component {
                 
                             <form>
                               <h1 className = 'getoffthenav'>Wanna checkout your mood?</h1>
-                              <h1 >Login below!</h1>
+                              <h1 >Enter your Reddit username below!</h1>
                             <div className = 'gettothechopa'>
                               <Input
                                 label="Type Username"
