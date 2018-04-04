@@ -18,9 +18,16 @@ body{
   margin-top: 70px;
   text-align: center;
 }
-.moodmap_title h3{
+.moodmap_title h1{
   font-weight: 600 !important;
   margin-bottom: -3px;
+  /* background: -webkit-linear-gradient( rgb(0, 110, 138), rgb(45, 190, 130));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  
+
+
+  color: rgba(20,20,20,.7)
 }
 .mood_key{
   margin-top: 0px;

@@ -164,7 +164,7 @@ class Map extends Component {
         
         <div className="map_bg" >
           <div className="moodmap_title">
-          <h3  >Welcome to the Mood Map</h3>
+          <h1>Welcome to the Mood Map</h1>
           <p>Explore popular Reddit posts based on their emotional vibe</p>
           </div>
                 <div className="mood_key">
@@ -185,7 +185,7 @@ class Map extends Component {
         </div>
           :
             <div className="shadow">
-              <div>Loading...</div>
+              
               <img
                 className="loading"
                 src="loading.svg"
