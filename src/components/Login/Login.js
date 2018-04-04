@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { getUser } from '../../ducks/reducer';
 import { Input, Button } from "mdbreact";
 import '../../App.css';
+import './Login.css'
+// import '../Home/Home.css'
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -25,20 +27,36 @@ class Login extends Component {
 
                 {/* <h2 className="mb-5">Form login</h2> */}
 
-                <div className='myinput'>
-                    <form>
-                        <p className="h5 text-center mb-4">Mood Analyzer</p>
-                        <Input label="Type Username" icon="user" validate error="wrong" success="right" className="inputModal2_Title"
-                            placeholder="username"
-                            onChange={(e) => this.setState({ newUser: e.target.value })} />
-
-                        <div className="text-center">
-                            <Link to = '/profile'>
-                                <Button color='primary' onClick={() => this.props.getUser(this.state.newUser)}>Search</Button>
-                            </Link>
-                        </div>
-                    </form>
-                </div>
+                <div className="home_login" >
+                
+                            <form>
+                              <h1 className = 'getoffthenav'>Wanna checkout your mood?</h1>
+                              <h1 >Enter your Reddit username below!</h1>
+                            <div className = 'gettothechopa'>
+                              <Input
+                                label="Type Username"
+                                icon="user"
+                                validate
+                                error="wrong"
+                                success="right"
+                                className="inputModal2_Title"
+                                placeholder="username"
+                                onChange={e => this.setState({ newUser: e.target.value })}
+                              />
+                            </div>
+                  
+                              <div className="text-center">
+                                <Link to="/profile">
+                                  <Button
+                                    color="primary"
+                                    onClick={() => this.props.getUser(this.state.newUser)}
+                                    >
+                                    Search
+                                  </Button>
+                                </Link>
+                              </div>
+                            </form>
+                          </div>
             </div>
         );
     }
