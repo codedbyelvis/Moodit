@@ -1,3 +1,7 @@
+.home_body{
+    background: white;
+}
+
 .home_wrapper{
     width: 100%;
     display: grid;
