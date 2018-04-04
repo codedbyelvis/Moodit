@@ -171,8 +171,8 @@ class Map extends Component {
                 <h5 onClick={()=>this.setState({filterBy:'Analytical'})} className="key_moods analytical" >ANALYTICAL</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Anger'})} className="key_moods anger" >ANGER</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Sadness'})} className="key_moods sadness" >SADNESS</h5>
-                <h5 onClick={()=>this.setState({filterBy:'Tentative'})} className="key_moods tentative" >TENTATIVE</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Confident'})} className="key_moods confident" >CONFIDENT</h5>
+                <h5 onClick={()=>this.setState({filterBy:'Tentative'})} className="key_moods tentative" >TENTATIVE</h5>
                 <h5 onClick={()=>this.setState({filterBy:'Fear'})} className="key_moods fear" >FEAR</h5>
                 <h5 onClick={()=>this.setState({filterBy:'All'})} className="key_moods all" >SHOW ALL</h5>
                 </div>
