@@ -8,3 +8,44 @@
 .nav-link-profile{
   list-style-type: none !important;
 }
+.customNav{
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 2px 3px 3px rgba(0, 2, 2, 0.2);
+ }
+ .moodit_logo{
+  margin-left: 20px;
+  position:fixed;
+  top: 15px;
+}
+ .nav_links{
+  display: inline-block;
+  position:fixed;
+  top: 15px;
+  right: 20px;
+ }
+
+.customNav ul li {
+  margin-right: 20px;
+  color:#ddd;
+  text-decoration: none;
+  list-style-type: none;
+  display: inline-block;
+  color: white;
+  
+ }
+
+.customNav a{
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+.customNav a:hover{
+  color: white !important;
+}

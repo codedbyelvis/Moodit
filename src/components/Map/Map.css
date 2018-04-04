@@ -1,7 +1,7 @@
 .card_grid {
   margin-top: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
   padding: 0 20px;
 }
@@ -10,7 +10,7 @@
   margin-left: 20px;
   margin-right: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
   grid-gap: 10px;
 }
 .key_moods{
@@ -20,31 +20,83 @@
   font-size:16px;
   font-weight: 400;
   cursor: pointer;
+
 }
+
+
 .joy{
-  background-color: rgb(105, 153, 51);
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
+}
+.joy:hover{
+  background-color: rgb(105, 153, 51) !important;
 }
 .analytical{
-  background-color: rgb(153, 151, 51);
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
 }
-.angry{
-  background-color: rgb(158, 27, 27);
+.analytical:hover{
+  background-color: rgb(105, 153, 51) !important;
 }
-.sad{
-  background-color: rgb(124, 32, 94);
+.anger{
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
+}
+.anger:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.sadness{
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
+}
+.sadness:hover{
+  background-color: rgb(105, 153, 51) !important;
 }
 .tentative{
-  background-color: rgb(153, 51, 139);
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
 }
-.happy{
-  background-color: rgb(37, 128, 123);
+.tentative:hover{
+  background-color: rgb(105, 153, 51) !important;
 }
-.depressed{
-  background-color: rgb(51, 54, 233);
+.confident{
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
+}
+.confident:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+.fear{
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
+}
+.fear:hover{
+  background-color: rgb(105, 153, 51) !important;
 }
 .all{
-  background-color: rgb(172, 114, 230);
+  background-color: rgba(105, 153, 51, 0.7) !important;
+  border: 2px solid rgba( 105, 153, 51, 0.6) !important;
+  border-radius: 4px;
 }
+.all:hover{
+  background-color: rgb(105, 153, 51) !important;
+}
+
+.no_results{
+  text-align: center !important;
+  margin-top: 300px !important;
+  font-family: 'Amatic SC', cursive;
+  width: 300px;
+  margin: 0 auto;
+}
+
 .post_tones{
   margin-right: 5px;
 }
@@ -62,6 +114,7 @@
   align-items: center;
   height: 400px;
   overflow: hidden;
+  position: relative;
 }
 .card_header {
   position: relative;
@@ -114,7 +167,11 @@
   }
 
 .post_comments{
-    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    height: 210px;
+    overflow: hidden;
 }
 .comments{
   height: 20px;
@@ -122,17 +179,22 @@
 }
 .comment_container{
   overflow: hidden;
+  
 }
+
 .comment_container p{
-  font-style: italic;
-  font-size: 15px;
-  line-height: 17px;
-  margin-bottom: -12px;
+  font-family: 'Handlee', cursive;
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
 }
 ._readMore{
+  position: absolute;
+  bottom: 0;
   height: 20px;
   width: 100%;
-  background: lightgray;
+  margin-bottom: 4px;
+  margin-left: 15px;
 }
 /* .shadow{
   display: grid;
@@ -195,6 +257,7 @@
     grid-area: subreddit;
     margin-left: 15px;
     color: white;
+    display: inline;
   }
 
   ._subreddit img{
@@ -202,6 +265,7 @@
     width: 20px;
     margin-left: 10px;
     margin-right: 3px;
+    display: inline;
   }
 
   ._comments {
@@ -225,4 +289,15 @@
     color: white;
     margin-left: 15px;
 
+  }
+
+  @media all and (max-width: 900px) {
+   .key_moods{
+     font-size: 10px !important;
+     font-weight: 400;
+     margin-bottom: 2px;
+   }
+   .mood_key{
+     grid-gap: 3px;
+   }
   }
