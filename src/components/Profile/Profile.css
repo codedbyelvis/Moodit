@@ -35,3 +35,11 @@ h2, h3  {
     border: 15px solid;
     border-radius: 50%;
 }
+
+.Profile_loading{
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 16%;
+    margin-left: 40%;
+}

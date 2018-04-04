@@ -6,13 +6,16 @@ const initialState = {
     time: '',
     picture: '',
     watsonNum: '',
-    watsonToneName: ''
-    // text: []
+    watsonToneName: '',
+    text: ''
 }
 
 const GET_USERINFO = 'GET_USERINFO';
 // const GET_USERINFO_PENDING = 'GET_USERINFO_PENDING'
+const GET_TEXT =  'GET_TEXT'
 const GET_USERINFO_FULFILLED = 'GET_USERINFO_FULFILLED'
+
+const GET_TEXT_FULFILLED = 'GET_TEXT_FULFILLED'
 
 const CLEAR_STORE = 'CLEAR_STORE'
 
@@ -50,6 +53,9 @@ export default function reducer(state = initialState, action) {
                 watsonToneName: action.payload.newStore
             });
 
+            case GET_TEXT:
+            return Object.assign({}, state, {text: action.payload})
+
         // case GET_TEXT_FULFILLED:
         //     return Object.assign({}, state, { text: action.payload });
 
@@ -82,6 +88,19 @@ export function clearReducer(){
     return{
         type: CLEAR_STORE,
         payload: newStore
+    }
+}
+
+export function getText(text){
+    // console.log(text)
+    const newText = axios.post('/api/text', {text}).then(
+        resp=>{
+            return resp;
+        }
+    )
+    return {
+        type: GET_TEXT,
+        payload: newText 
     }
 }
 

@@ -23,7 +23,7 @@ class Map extends Component {
     // this.myCallback = this.myCallback.bind(this)
   }
 
-//Change getInfo to componentDidMount when ready to go live.
+//Change compdidmount to componentDidMount when ready to go live.
   compdidmount() {
     axios.get("/api/comments").then(({ data }) => {
       console.log(data);
@@ -46,7 +46,7 @@ class Map extends Component {
 
   showComment(animatedComments){
     // setInterval( myCallback, 500)
-    console.log(animatedComments[0], animatedComments[1] )
+    // console.log(animatedComments[0], animatedComments[1] )
   
     //  return <p className="animatedComment" >{animatedComments[2]}</p>
     let animatedArray = []

@@ -6,6 +6,7 @@ import Map from "./components/Map/Map";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
 import MoodditText from "./components/SVG/MoodditText";
+import Analyze from './components/Text/Text'
 import './App.css'
 // import SvgReddit from "./components/SVG/SvgReddit";
 
@@ -43,6 +44,7 @@ class App extends Component {
               <Route component={Login} path="/login" />
               <Route component={Profile} path="/profile" />
               <Route component={Map} path="/map" />
+              <Route component={Analyze} path='/Analyze'/>
             </Switch>
           </div>
         </BrowserRouter>
