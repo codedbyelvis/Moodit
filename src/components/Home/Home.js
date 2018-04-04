@@ -13,7 +13,6 @@ import img1 from "../../assets/img1.jpg";
 import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
 import happy_reddit from "../../assets/happy_reddit.svg";
-import Navbar from '../Navbar/Navbar'
 import './Home.css'
 
 
@@ -28,7 +27,6 @@ class Home extends Component {
     return (
       <div>
 <div className="home_wrapper" >
-      <Navbar />
           <div className="home_hero">
             {/* <video src={video1} autoPlay="true" loop > </video> */}
             <img src={img1} />

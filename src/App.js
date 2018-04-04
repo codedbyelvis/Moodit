@@ -34,7 +34,8 @@ class App extends Component {
             dark 
             expand="lg"
             fixed="top" 
-            scrolling>
+            >
+              
                 <NavItem>
                   <NavLink className="nav-link-profile moodit_brand_nav" to="/">
                   <MoodditText />
