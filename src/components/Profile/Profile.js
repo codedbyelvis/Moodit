@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getUser, clearReducer } from "../../ducks/reducer";
 import { connect } from "react-redux";
 import { Chart } from "react-chartjs-2";
-import { Button, Card, CardBody, CardImage, CardText } from "mdbreact";
+// import { Button, Card, CardBody, CardImage, CardText } from "mdbreact";
 import axios from "axios";
 import "./Profile.css";
 
@@ -29,7 +29,7 @@ class Profile extends Component {
          labels: this.props.watsonToneName,
          datasets: [
            {
-             label: "# of Votes",
+             label: "Percentage of Tone",
              data: this.props.watsonNum,
              backgroundColor: [
                "rgba(255, 99, 132, 0.2)",
@@ -120,8 +120,10 @@ class Profile extends Component {
              <img className="redditpic" src={this.props.picture} alt="" style={{borderColor: this.state.color}}/>
            </div>
            <div className="col-md-9 ">
-             <canvas id="barChart" style={{backgroundColor: 'white'}}></canvas>
              <div className="profile_greeting">
+             {!this.state.firstLoad ===true ?
+             <div>
+
                <h1>Hello, {this.props.user}</h1>
 
                <h3>
@@ -130,8 +132,20 @@ class Profile extends Component {
                  profile
                </h3>
              </div>
+             :
+             <div>
+               <div className="">Loading...
+              
+              <img
+                className="Profile_loading"
+                src="loading.svg"
+              />
+            </div>
+             </div>
+             }
+             <canvas id="barChart" style={{backgroundColor: ''}}></canvas>
+             </div>
            </div>
-         {/* </div> */}
          </div>
        </div>
      </div>

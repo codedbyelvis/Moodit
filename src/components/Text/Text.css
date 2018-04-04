@@ -1,0 +1,31 @@
+.text_input{
+    width: 80%;
+    height: 210px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 8px;
+    position: absolute;
+    font-size: 18px;
+    top: 200px;
+    left: 85px;
+    background-color: #f8f8f8;
+    resize: vertical;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.text_input:focus{
+    outline: none;
+}
+
+.text_here{
+    position: absolute;
+    top: 150px;
+    left: 340px;
+}
+
+.button_text{
+    position: absolute;
+    top: 450px;
+    left: 320px;
+}

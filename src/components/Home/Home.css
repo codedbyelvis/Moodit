@@ -1,3 +1,7 @@
+.fa-user:before {
+    color: rgb(52, 121, 224);
+}
+
 .home_body{
     background: white;
 }

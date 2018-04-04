@@ -23,14 +23,6 @@ class Home extends Component {
         newUser: ""
     }
 }
-
-  testEndpoint() {
-    console.log(this.state.fakeData);
-    axios.get("/api/test").then(res => {
-      console.log(res);
-    });
-  }
-
   render() {
     return (
       <div className="home_body" >
@@ -51,7 +43,7 @@ class Home extends Component {
             <div className="home_login" >
   
               <form>
-                <h1 >What's your moodit?</h1>
+                <h1 >What's your mood?</h1>
                 <h1 >Let Watson analyze you.</h1>
   
                 <Input

@@ -35,6 +35,11 @@ const tone_analyzer = new ToneAnalyzerV3(
                 version_date: '2017-09-21'
         });
 
+app.post('/api/text', (req, res, next) => {
+        console.log(req.body.text)
+        
+})
+
 //-----------watson/reddit--------------
 
 app.post('/api/user', (req, res, next) => {
