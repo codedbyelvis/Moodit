@@ -2,8 +2,13 @@
 .profile_loading{
     background-color:blue;
 }
-.profile_greeting{
-    /* background-color: rebeccapurple; */
+
+.plainText {
+    font-family: 'Raleway', sans-serif;;
+}
+
+.profileColor {
+    background-color: skyblue;
 }
 .no_user{
     margin: 500px auto;
