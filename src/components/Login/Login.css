@@ -1,0 +1,16 @@
+.getoffthenav {
+    padding-top: 70px;
+}
+
+h1 {
+    text-align: center;    
+}
+
+.gettothechopa {
+    width: 300px;
+    margin: auto;
+}
+
+.fa-user:before {
+    color: rgb(52, 121, 224);
+}

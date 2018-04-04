@@ -9,6 +9,7 @@ import MoodditText from "./components/SVG/MoodditText";
 import Analyze from './components/Text/Text'
 import './App.css'
 // import SvgReddit from "./components/SVG/SvgReddit";
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class App extends Component {
             <Link className="moodit_logo" to="/">Home</Link>
             <div className="nav_links" >
               <ul>
-              <li><Link to="/profile">My Emotions</Link></li>
+              <li><Link to="/login">My Emotions</Link></li>
               <li><Link to="/map">Mood Map</Link></li>
               </ul>
             </div>

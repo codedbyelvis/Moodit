@@ -29,7 +29,7 @@ class Profile extends Component {
          labels: this.props.watsonToneName,
          datasets: [
            {
-             label: "# of Votes",
+             label: "Percentage of Tone",
              data: this.props.watsonNum,
              backgroundColor: [
                "rgba(255, 99, 132, 0.2)",
