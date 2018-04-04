@@ -33,7 +33,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div >
+      <div className="home_body" >
 <div >
   
           <div className="home_hero">
