@@ -33,8 +33,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-<div className="home_wrapper" >
+      <div >
+<div >
   
           <div className="home_hero">
             {/* <video src={video1} autoPlay="true" loop > </video> */}

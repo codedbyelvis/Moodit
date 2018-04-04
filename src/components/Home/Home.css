@@ -1,5 +1,5 @@
 .home_wrapper{
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     /* background: blue; */
@@ -9,12 +9,9 @@
     display: grid;
     grid-template-columns: 1fr 2fr 3fr 1fr;
     grid-gap: 20px;
-    width: 100vw;
+    margin-top: 30px !important;
+}
 
-}
-.home_profile_login{
-    margin-top: 30px;
-}
 .home_profile_login img{
     height: 300px;
 }
@@ -32,7 +29,7 @@ video{
 }
 .home_hero{
     width: 100vw;
-    min-height: 800px;
+    min-height: 400px;
 }
 .home_hero img{
     z-index: -5;
@@ -40,4 +37,9 @@ video{
 }
 .home_section3{
     margin-top: 80px;
+}
+.home_section3{
+
+    text-align: center;
+    margin-top: 50px;
 }
