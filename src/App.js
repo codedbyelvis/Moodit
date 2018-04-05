@@ -35,6 +35,7 @@ class App extends Component {
               <ul>
               <li><Link to="/login">My Emotions</Link></li>
               <li><Link to="/map">Mood Map</Link></li>
+              <li><Link to='/Analyze'>Analyze your text</Link></li>
               </ul>
             </div>
             </div>
