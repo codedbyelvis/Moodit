@@ -9,10 +9,12 @@ import { Input, Button } from "mdbreact";
 import RedditMoods from "../SVG/RedditMoods";
 import MoodditText from "../SVG/MoodditText";
 // import MyNavbar from '../Navbar/navBar'
-import img1 from "../../assets/img1.jpg";
+import img1 from "./bgimg.jpg";
 import img2 from "../../assets/img2.jpg";
 import img3 from "../../assets/img3.jpg";
 import happy_reddit from "../../assets/happy_reddit.svg";
+import littleReddit from './alpha.gif'
+import video1 from '../../assets/home_vid.mp4'
 import './Home.css'
 
 
@@ -23,13 +25,21 @@ class Home extends Component {
         newUser: ""
     }
 }
+
+  testEndpoint() {
+    console.log(this.state.fakeData);
+    axios.get("/api/test").then(res => {
+      console.log(res);
+    });
+  }
+
   render() {
     return (
       <div className="home_body" >
 <div >
   
           <div className="home_hero">
-            {/* <video src={video1} autoPlay="true" loop > </video> */}
+            <video src={video1} autoPlay="true" loop > </video>
             <img src={img1} />
           </div>
   
@@ -37,18 +47,17 @@ class Home extends Component {
           <div></div>
   
   
-            <img src={happy_reddit} />
+            <img src={littleReddit} />
   
   
             <div className="home_login" >
   
-              <form>
-                <h1 >What's your mood?</h1>
+              <form className="home_form" >
+                <h1 >What's your moodit?</h1>
                 <h1 >Let Watson analyze you.</h1>
-                <h1 >test.</h1>
   
                 <Input
-                  label="Type Username"
+                  label="Reddit username"
                   icon="user"
                   validate
                   error="wrong"
@@ -76,7 +85,7 @@ class Home extends Component {
           </div>
   
         <div className="home_section3">
-        <img src={img3} />
+        
   
         </div>
 
