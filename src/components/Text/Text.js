@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import { getText } from '../../ducks/reducer';
-// import { Input, Button } from "mdbreact";
 import './Text.css'
 
 class Analyze extends Component {
@@ -14,10 +13,24 @@ class Analyze extends Component {
     }
 
     render() {
+        let {analyzedTextOverall, analyzedTextSentences, text} = this.props
+        let newbox = analyzedTextSentences.map((val, i)=>{
+            console.log(val)
+            if(val.tones.length>0){
+                return(
+                    <div className="Analyze_box" key={i}>
+                        <p>Sentence Analyzed: {val.text}</p>
+                        <p>Tone of your text: {val.tones[0].tone_name}</p>
+                        <p>Percentage: {Math.floor((val.tones[0].score)*100)}%</p>
+                    </div>
+                )
+            }
+          
+        })
         return (
-            <div>
+            <div className="Analyze_body">
                 <div className='myinput'>
-                        <p className="text_here">Analyze your own text</p>
+                        <h2 className="text_here">Analyze your own text</h2>
                         <textarea 
                             className="text_input"
                             placeholder="Your text here..."
@@ -25,6 +38,9 @@ class Analyze extends Component {
                             {/* <Link to='/'> */}
                                 <button className="button_text" onClick={() => this.props.getText(this.state.text)}>Analyze</button>
                         {/* </Link> */}
+                        <div className="Analyze_box_body">
+                            {newbox}
+                        </div>
                 </div>
             </div>
         );
@@ -32,9 +48,12 @@ class Analyze extends Component {
 }
 
 function mapStateToProps(state){
-    const {text} = state;
+    const {text, analyzedTextOverall, analyzedTextSentences } = state;
     return {
-        text
+        text: text, 
+        analyzedTextOverall: analyzedTextOverall,
+        analyzedTextSentences: analyzedTextSentences
+
     }
 }
 
