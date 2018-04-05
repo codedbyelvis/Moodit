@@ -35,9 +35,29 @@ const tone_analyzer = new ToneAnalyzerV3(
                 version_date: '2017-09-21'
         });
 
+///Analyze your own text
 app.post('/api/text', (req, res, next) => {
-        console.log(req.body.text)
-        
+        const textToAnalyze = req.body.text
+        if (textToAnalyze.length>0){
+        // console.log(textToAnalyze)
+        var input = {"text": textToAnalyze}
+        var params = {
+                'tone_input': input,
+                'content_type': 'application/json'
+        }
+       tone_analyzer.tone(params, function(error, response){
+               if(error){
+                       console.log('Error', error)
+               }else{
+                //        var response1 = response
+                const redditText = {
+                        textAnalyzed: response, 
+                        text: textToAnalyze
+                }
+                res.status(200).send(redditText)
+               }
+       })
+        }
 })
 
 //-----------watson/reddit--------------

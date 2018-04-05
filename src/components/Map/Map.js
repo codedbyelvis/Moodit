@@ -6,6 +6,7 @@ import './Map.css'
 import './animations.css'
 import jsonResponse from  './data.js'
 import MapCard from '../Card/MapCard'
+import Loading from '../../assets/loading.gif'
 
 class Map extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class Map extends Component {
   }
 
 
-//Use this for fake data. Comment out when ready to go live
+// Use this for fake data. Comment out when ready to go live
   componentDidMount() {
     this.setState({
       mapInformation: jsonResponse,
@@ -187,7 +188,7 @@ class Map extends Component {
               
               <img
                 className="loading"
-                src="loading.svg"
+                src={Loading}
               />
             </div>
         }
