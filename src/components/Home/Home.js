@@ -45,6 +45,7 @@ class Home extends Component {
               <form>
                 <h1 >What's your mood?</h1>
                 <h1 >Let Watson analyze you.</h1>
+                <h1 >test.</h1>
   
                 <Input
                   label="Type Username"
