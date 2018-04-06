@@ -22,6 +22,6 @@ yarn-error.log*
 
 .env
 
-*.gif
+# *.gif
 *.mp4
 *.mov
