@@ -1,1 +1,0 @@
-const ruby = require('../src/ducks/reducer')

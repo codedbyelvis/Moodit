@@ -50,3 +50,17 @@ describe('hello world', function(){
         //   .click()
     })
 })
+
+const snoowrap = require('snoowrap')
+
+const {
+    SERVER_PORT,
+    CLIENT_ID,
+    CLIENT_SECRET,
+    REFRESH_TOKEN,
+    USER_AGENT,
+    WATSON_USERNAME,
+    PASSWORD
+} = process.env;
+
+r.getUser('spez').fetch()
