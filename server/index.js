@@ -3,8 +3,9 @@ const express = require('express'),
         bodyParser = require('body-parser'),
         ctrl = require('./controllers/controllers'),
         snoowrap = require('snoowrap'),
-        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
-        
+        ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3'),
+        path = require('path');
+
 const {
         SERVER_PORT,
         CLIENT_ID,
@@ -18,6 +19,7 @@ const {
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../build')))
 
 // reddit api credentials
 const r = new snoowrap({
@@ -38,25 +40,25 @@ const tone_analyzer = new ToneAnalyzerV3(
 ///Analyze your own text
 app.post('/api/text', (req, res, next) => {
         const textToAnalyze = req.body.text
-        if (textToAnalyze.length>0){
-        // console.log(textToAnalyze)
-        var input = {"text": textToAnalyze}
-        var params = {
-                'tone_input': input,
-                'content_type': 'application/json'
-        }
-       tone_analyzer.tone(params, function(error, response){
-               if(error){
-                       console.log('Error', error)
-               }else{
-                //        var response1 = response
-                const redditText = {
-                        textAnalyzed: response, 
-                        text: textToAnalyze
+        if (textToAnalyze.length > 0) {
+                // console.log(textToAnalyze)
+                var input = { "text": textToAnalyze }
+                var params = {
+                        'tone_input': input,
+                        'content_type': 'application/json'
                 }
-                res.status(200).send(redditText)
-               }
-       })
+                tone_analyzer.tone(params, function (error, response) {
+                        if (error) {
+                                console.log('Error', error)
+                        } else {
+                                //        var response1 = response
+                                const redditText = {
+                                        textAnalyzed: response,
+                                        text: textToAnalyze
+                                }
+                                res.status(200).send(redditText)
+                        }
+                })
         }
 })
 
@@ -168,7 +170,7 @@ app.get('/api/comments', (req, res, next) => {
                                 var postInfo = {
                                         subName: subName,
                                         postTitle: postTitle,
-                                        link: 'http://reddit.com'+link,
+                                        link: 'http://reddit.com' + link,
                                         redditComments: [],
                                         subId: subId,
                                         watsonInfo: []
@@ -176,7 +178,7 @@ app.get('/api/comments', (req, res, next) => {
                                 redditHot.push(postInfo)
                                 newArray.push(r.getSubmission(subId).comments)
                         }
-                        
+
                         //gathering all the comments for each post and placing them in the Array in the correct order
                         Promise.all(newArray).then(responses => {
                                 redditHot.forEach((post, i) => {
@@ -218,7 +220,9 @@ app.get('/api/comments', (req, res, next) => {
 
 app.get('/api/test', ctrl.get)
 
-
+app.all('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../build'))
+})
 
 app.listen(SERVER_PORT, () => {
         console.log(`Listening on port: ${SERVER_PORT}`);
