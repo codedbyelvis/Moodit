@@ -152,7 +152,7 @@ class Map extends Component {
         );
       } else {
       iterator++
-        console.log(iterator)
+        // console.log(iterator)
       }
     })
     
