@@ -22,7 +22,7 @@ class App extends Component {
 
   test() {
     console.log('success')
-  }
+  } 
 
   render() {
     return (
