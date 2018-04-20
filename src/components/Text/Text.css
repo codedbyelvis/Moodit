@@ -27,13 +27,25 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
 .text_here{
     position: absolute;
     top: 70px;
-    left: 300px;
+    left: 400px;
 }
 
 .button_text{
     position: absolute;
     top: 350px;
-    left: 450px;
+    left: 500px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #0001;
+    color: black;
+    border: 2px solid #4CAF50;
+    padding: 12px 28px;
+    font-weight: bold;
+}
+
+.button_text:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
 }
 
 .Analyze_box_body{
@@ -46,9 +58,10 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
     flex-direction: column;
     min-width: 300px;
     min-height: 200px;
-    margin-top: 430px;
+    margin-top: 400px;
    margin-left: 20px;
    margin-bottom: 15px;
+   color: black;
    width: 0px;
    padding: 10px 20px 40px 20px;
    border: 2px solid black;
