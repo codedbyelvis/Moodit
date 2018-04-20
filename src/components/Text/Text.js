@@ -19,9 +19,12 @@ class Analyze extends Component {
             if(val.tones.length>0){
                 return(
                     <div className="Analyze_box" key={i}>
-                        <p>Sentence Analyzed: {val.text}</p>
-                        <p>Tone of your text: {val.tones[0].tone_name}</p>
-                        <p>Percentage: {Math.floor((val.tones[0].score)*100)}%</p>
+                        <h4>SENTENCE ANALYZED: </h4>
+                        <p>{val.text}</p>
+                        <h4>TONE OF YOUR TEXT: </h4>
+                        <p>{val.tones[0].tone_name}</p>
+                        <h4>PERCENTAGE: </h4>
+                        <p>{Math.floor((val.tones[0].score)*100)}%</p>
                     </div>
                 )
             }
@@ -36,7 +39,7 @@ class Analyze extends Component {
                             placeholder="Your text here..."
                             onChange={(e) => this.setState({ text: e.target.value })} />
                             {/* <Link to='/'> */}
-                                <button className="button_text" onClick={() => this.props.getText(this.state.text)}>Analyze</button>
+                                <button className="button_text" onClick={() => this.props.getText(this.state.text)}>ANALYZE</button>
                         {/* </Link> */}
                         <div className="Analyze_box_body">
                             {newbox}
