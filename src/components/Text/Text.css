@@ -1,77 +1,70 @@
 .Analyze_body{
-width: 100vw;
-height: 100vh;
-background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
-}
-
-
-.text_input{
-    width: 50%;
-    height: 100px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 8px;
-    font-size: 18px;
-    margin: auto;
-    background-color: #f8f8f8;
-    resize: vertical;
-}
-
-.text_input:focus{
-    outline: none;
-}
-
-.text_here{
-<<<<<<< HEAD
-    margin: auto;
-    padding-top: 70px;
-    color: #297fca;
-=======
-    position: absolute;
-    top: 70px;
-    left: 400px;
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> 4d45c59d9be8e9c2f5e1b25e0aacc1b1e903b583
-}
-
-.button_text{
-    position: absolute;
-    top: 350px;
-    left: 500px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    background-color: #0001;
-    color: black;
-    border: 2px solid #4CAF50;
-    padding: 12px 28px;
-    font-weight: bold;
-}
-
-.button_text:hover{
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-.Analyze_box_body{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;    
-}
-
-.Analyze_box{
-    flex-direction: column;
-    min-width: 300px;
-    min-height: 200px;
-    margin-top: 400px;
-   margin-left: 20px;
-   margin-bottom: 15px;
-   color: black;
-   width: 0px;
-   padding: 10px 20px 40px 20px;
-   border: 2px solid black;
-   font-weight: bold;
-   box-shadow: 0 5px 30px 0 black;
-} 
-
+    width: 100vw;
+    height: 100vh;
+    background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
+    }
+    
+    .text_input{
+        width: 80%;
+        height: 210px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 8px;
+        position: absolute;
+        font-size: 18px;
+        top: 130px;
+        left: 100px;
+        background-color: #f8f8f8;
+        resize: vertical;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    
+    .text_input:focus{
+        outline: none;
+    }
+    
+    .text_here{
+        position: absolute;
+        top: 70px;
+        left: 400px;
+    }
+    
+    .button_text{
+        position: absolute;
+        top: 350px;
+        left: 500px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        background-color: #0001;
+        color: black;
+        border: 2px solid #4CAF50;
+        padding: 12px 28px;
+        font-weight: bold;
+    }
+    
+    .button_text:hover{
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+    
+    .Analyze_box_body{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;    
+    }
+    
+    .Analyze_box{
+        flex-direction: column;
+        min-width: 300px;
+        min-height: 200px;
+        margin-top: 400px;
+       margin-left: 20px;
+       margin-bottom: 15px;
+       color: black;
+       width: 0px;
+       padding: 10px 20px 40px 20px;
+       border: 2px solid black;
+       font-weight: bold;
+       box-shadow: 0 5px 30px 0 black;
+    }

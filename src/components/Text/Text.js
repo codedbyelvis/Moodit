@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import { getText } from '../../ducks/reducer';
 import './Text.css'
-import { Input, Button } from "mdbreact";
-
 
 class Analyze extends Component {
     constructor(props) {
@@ -35,19 +33,14 @@ class Analyze extends Component {
         return (
             <div className="Analyze_body">
                 <div className='myinput'>
-                        <h1 className="text_here">Analyze your own text!</h1>
+                        <h2 className="text_here">Analyze your own text</h2>
                         <textarea 
                             className="text_input"
                             placeholder="Your text here..."
                             onChange={(e) => this.setState({ text: e.target.value })} />
                             {/* <Link to='/'> */}
-<<<<<<< HEAD
-                                {/* <button className="button_text" onClick={() => this.props.getText(this.state.text)}>Analyze</button> */}
-=======
                                 <button className="button_text" onClick={() => this.props.getText(this.state.text)}>ANALYZE</button>
->>>>>>> master
                         {/* </Link> */}
-                        <Button color = 'primary' className = 'button_text' onClick={() => this.props.getText(this.state.text)} > Analyze</Button>
                         <div className="Analyze_box_body">
                             {newbox}
                         </div>
@@ -68,6 +61,3 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {getText})(Analyze);
-
-
-// export default Text
