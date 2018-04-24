@@ -30,7 +30,10 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
     position: absolute;
     top: 70px;
     left: 400px;
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 4d45c59d9be8e9c2f5e1b25e0aacc1b1e903b583
 }
 
 .button_text{
@@ -61,14 +64,10 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
     flex-direction: column;
     min-width: 300px;
     min-height: 200px;
-<<<<<<< HEAD
-    margin: auto;
-=======
     margin-top: 400px;
    margin-left: 20px;
    margin-bottom: 15px;
    color: black;
->>>>>>> master
    width: 0px;
    padding: 10px 20px 40px 20px;
    border: 2px solid black;
