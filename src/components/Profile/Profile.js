@@ -5,6 +5,7 @@ import { Chart } from "react-chartjs-2";
 // import { Button, Card, CardBody, CardImage, CardText } from "mdbreact";
 import axios from "axios";
 import "./Profile.css";
+import Loading from '../../assets/loading.gif'
 
 class Profile extends Component {
  constructor(props) {
@@ -124,9 +125,9 @@ class Profile extends Component {
              {!this.state.firstLoad ===true ?
              <div>
 
-               <h1>Hello, {this.props.user}</h1>
+               <h1 className = 'helloBlue'>Hello, {this.props.user}</h1>
 
-               <h3>
+               <h3 className = 'helloBlue'>
                  Watson has done a thorough analysis of your Reddit comments
                  and discovered some interesting insights. Here's your Moodit
                  profile
@@ -134,14 +135,20 @@ class Profile extends Component {
              </div>
              :
              <div>
-               <div className="">Loading...
-              
-              <img
-                className="Profile_loading"
-                src="loading.svg"
-              />
-            </div>
+             <div className="loading" >
+                   <img
+                    
+                    src={Loading}
+                  />
              </div>
+                
+                 
+                {/* <img
+                  className="Profile_loading"
+                  src="loading.svg"
+                /> */}
+             
+               </div>
              }
              <canvas id="barChart" style={{backgroundColor: ''}}></canvas>
              </div>

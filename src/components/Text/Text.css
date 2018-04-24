@@ -4,20 +4,17 @@ height: 100vh;
 background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
 }
 
+
 .text_input{
-    width: 80%;
-    height: 210px;
+    width: 50%;
+    height: 100px;
     box-sizing: border-box;
     border: 2px solid black;
     border-radius: 8px;
-    position: absolute;
     font-size: 18px;
-    top: 130px;
-    left: 100px;
+    margin: auto;
     background-color: #f8f8f8;
     resize: vertical;
-    padding-left: 10px;
-    padding-top: 10px;
 }
 
 .text_input:focus{
@@ -25,9 +22,9 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
 }
 
 .text_here{
-    position: absolute;
-    top: 70px;
-    left: 300px;
+    margin: auto;
+    padding-top: 70px;
+    color: #297fca;
 }
 
 .button_text{
@@ -46,12 +43,11 @@ background-color: linear-gradient(to left, #3399ff 0%, #009999 100%) ;
     flex-direction: column;
     min-width: 300px;
     min-height: 200px;
-    margin-top: 430px;
-   margin-left: 20px;
-   margin-bottom: 15px;
+    margin: auto;
    width: 0px;
    padding: 10px 20px 40px 20px;
    border: 2px solid black;
    font-weight: bold;
    box-shadow: 0 5px 30px 0 black;
-}
+} 
+

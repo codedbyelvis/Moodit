@@ -17,6 +17,12 @@
     margin-top: 400px;
     
 }
+
+.helloBlue {
+    color:  #297fca;
+
+}
+
 .profile_wrapper{
     margin-top: 100px;
    
@@ -30,6 +36,20 @@ h2, h3  {
     font-weight: 400 !important;
 
 }
+
+.loading{
+    width: 350px;
+    margin-left: 0;
+   
+    margin-top: 100px;
+    display: block;
+      }
+    .loading img{
+      height: 450px;
+      display: block;
+      margin-left: 200px;;
+    }
+
 
 @media all and (max-width:480px) {
     
