@@ -1,6 +1,7 @@
+
 body{
 
-  background: linear-gradient(to right, rgba( 105, 153, 51, 0.3) 0%,rgba(44, 134, 156, 0.5) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* background: linear-gradient(to right, rgba( 105, 153, 51, 0.3) 0%,rgba(44, 134, 156, 0.5) 99%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 
@@ -17,10 +18,12 @@ body{
   margin-left: 20px;
   margin-top: 70px;
   text-align: center;
+  color: #297fca;
 }
 .moodmap_title h1{
   font-weight: 600 !important;
   margin-bottom: -3px;
+  color: #297fca !important;
   /* background: -webkit-linear-gradient( rgb(0, 110, 138), rgb(45, 190, 130));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */

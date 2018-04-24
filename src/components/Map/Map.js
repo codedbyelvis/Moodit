@@ -25,7 +25,7 @@ class Map extends Component {
   }
 
 //Change compdidmount to componentDidMount when ready to go live.
-  compdidmount() {
+  compdid() {
     axios.get("/api/comments").then(({ data }) => {
       console.log(data);
       this.setState({
