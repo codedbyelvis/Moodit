@@ -34,7 +34,6 @@ class Login extends Component {
                               <h1 >Enter your Reddit username below!</h1>
                             <div className = 'gettothechopa'>
                               <Input
-                                label="Type Username"
                                 icon="user"
                                 validate
                                 error="wrong"

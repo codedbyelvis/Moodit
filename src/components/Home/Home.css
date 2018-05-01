@@ -53,7 +53,7 @@ video{
 }
 
 .home_section3{
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%,rgba(104, 152, 163, 0.8) 99%);
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%,rgba(104, 152, 163, 0.8) 99%); */
     height: 600px;
     text-align: center;
     margin-top: 80px;
