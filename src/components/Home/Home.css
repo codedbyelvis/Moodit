@@ -2,6 +2,12 @@
     background: white;
 }
 
+.search-button {
+   background-color: rgb(56, 108, 252);
+   color: white;
+   border-radius: 5px;
+}
+
 .home_wrapper{
     width: 100%;
     display: grid;
