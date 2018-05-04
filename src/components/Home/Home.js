@@ -53,11 +53,10 @@ class Home extends Component {
             <div className="home_login" >
   
               <form className="home_form" >
-                <h1 >What's your moodit?</h1>
-                <h1 >Let Watson analyze you.</h1>
+                <h1 >What's your mood?</h1>
+                <h1 >Type your Reddit username below.</h1>
   
                 <Input
-                  label="Reddit username"
                   icon="user"
                   validate
                   error="wrong"
@@ -69,12 +68,12 @@ class Home extends Component {
     
                 <div className="text-center">
                   <Link to="/profile">
-                    <Button
-                      color="primary"
-                      onClick={() => this.props.getUser(this.state.newUser)}
-                      >
-                      Search
-                    </Button>
+                  <button
+                  className = 'search-button'
+                  onClick={() => this.props.getUser(this.state.newUser)}
+                  >
+                  Search
+                </button>
                   </Link>
                 </div>
               </form>
@@ -103,3 +102,4 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, { getUser })(Home);
+
