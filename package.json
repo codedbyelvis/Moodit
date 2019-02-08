@@ -1,7 +1,12 @@
 {
   "name": "moodit",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "A web app using IBM Watson and Reddit APIs",
   "private": true,
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "animate.css": "^3.6.1",
     "axios": "^0.18.0",
